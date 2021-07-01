@@ -25,10 +25,10 @@ const Main = () => {
       <div className="">
         {pages.map((page, index) => (
           <section
-            key={page}
+            key={`section-${page.id}`}
             id={page.id}
             style={{
-              height: "800px",
+              height: "100vh",
               backgroundColor: colors[index % 2],
               padding: 10,
               color: "white",
