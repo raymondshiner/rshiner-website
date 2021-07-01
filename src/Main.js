@@ -8,7 +8,7 @@ const generatePage = (id, copy, component) => ({
 });
 
 export const pages = [
-  generatePage("home", "Home", <div>I'm a Home</div>),
+  generatePage("home", "Home", <div></div>),
   generatePage("about", "About Me", <div>I'm an About</div>),
   generatePage("cv", "Resume/CV", <div>I'm an Resume/CV</div>),
   generatePage("portfolio", "Portfolio", <div>I'm an Portfolio</div>),

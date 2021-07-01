@@ -16,6 +16,8 @@ header .logo {
   font-size: 1.55rem;
   text-transform: uppercase;
   letter-spacing: 2px;
+  min-width: fit-content;
+  margin-right: 30px;
   color: white;
   transition: 0.6s;
   border: 2px solid #2bc5e0;
@@ -29,9 +31,9 @@ header ul {
 }
 
 header ul li {
+  min-width: fit-content;
   list-style: none;
-  padding-bottom: 5px;
-  margin: 0 15px;
+  margin: 0 18px;
 }
 
 header ul li a {
@@ -50,6 +52,7 @@ header.sticky {
 }
 
 .active {
-  transition: ease 1s;
-  border-bottom: 1px solid #2bc5e0;
+  padding-bottom: 5px;
+  transition: linear 0.25s;
+  border-bottom: 3px solid #2bc5e0;
 }
