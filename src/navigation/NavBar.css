@@ -34,6 +34,7 @@ header ul li {
   min-width: fit-content;
   list-style: none;
   margin: 0 18px;
+  transition: 0.25s;
 }
 
 header ul li a {
@@ -53,6 +54,6 @@ header.sticky {
 
 .active {
   padding-bottom: 5px;
-  transition: linear 0.25s;
+  transition: ease-in-out 0.25s;
   border-bottom: 3px solid #2bc5e0;
 }

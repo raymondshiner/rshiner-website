@@ -1,18 +1,13 @@
+import useActiveNavItem from "hooks/useActiveNavItem";
 import useWindowHasScrolled from "hooks/useWindowHasScrolled";
 import { pages } from "Main";
-import React, { useEffect } from "react";
+import React from "react";
 import { HashLink } from "react-router-hash-link";
 import "./NavBar.css";
 
 const NavBar = () => {
   const windowHasScrolled = useWindowHasScrolled();
-
-  useEffect(() => {
-    window.addEventListener("scroll", setActiveNavItem);
-    return () => {
-      window.removeEventListener("scroll", setActiveNavItem);
-    };
-  }, []);
+  const activeItem = useActiveNavItem();
 
   const scrollWithOffset = (el) => {
     const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;
@@ -31,7 +26,7 @@ const NavBar = () => {
             <li
               key={`nav-${page.id}`}
               id={`nav-${page.id}`}
-              className={page.id === "home" ? "active" : ""}
+              className={page.id === activeItem ? "active" : ""}
             >
               <HashLink to={`#${page.id}`} smooth scroll={scrollWithOffset}>
                 {page.copy}
@@ -45,28 +40,3 @@ const NavBar = () => {
 };
 
 export default NavBar;
-
-const setActiveNavItem = () => {
-  const sections = document.querySelectorAll("section[id]");
-
-  let scrollY = window.pageYOffset;
-
-  sections.forEach((current) => {
-    const sectionHeight = current.offsetHeight;
-    const sectionTop = current.offsetTop - 250;
-    const sectionId = current.getAttribute("id");
-
-    const haveScrolledPastSectionTop = scrollY > sectionTop;
-    const haventScrolledPastSection = scrollY <= sectionTop + sectionHeight;
-
-    if (haveScrolledPastSectionTop && haventScrolledPastSection) {
-      document
-        .querySelector(`header li[id='nav-${sectionId}']`)
-        .classList.add("active");
-    } else {
-      document
-        .querySelector(`header li[id='nav-${sectionId}']`)
-        .classList.remove("active");
-    }
-  });
-};
