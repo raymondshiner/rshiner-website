@@ -1,16 +1,21 @@
+import { useDrawerState } from "state";
 import styled from "styled-components";
 
-const MenuButton = ({ active, onClick }) => {
+const MenuButton = () => {
+  const { drawerOpen, setDrawerOpen } = useDrawerState();
+
+  const toggleDrawer = () => setDrawerOpen(!drawerOpen);
+
   return (
-    <HamburgerWrapper active={active} onClick={onClick}>
+    <HamburgerButton active={drawerOpen} onClick={toggleDrawer}>
       <span />
       <span />
       <span />
-    </HamburgerWrapper>
+    </HamburgerButton>
   );
 };
 
-const HamburgerWrapper = styled.div`
+const HamburgerButton = styled.div`
   width: 32px;
   height: 25px;
   display: flex;

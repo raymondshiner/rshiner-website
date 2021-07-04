@@ -1,6 +1,6 @@
 import { Drawer, TopBar } from "navigation";
 import React from "react";
-import { DrawerStateProvider } from "state";
+import { useDrawerState } from "state";
 
 const generatePage = (id, copy, component) => ({
   id,
@@ -19,13 +19,21 @@ export const pages = [
 
 const Main = () => {
   const colors = ["black", "#191919"];
+  const { drawerOpen } = useDrawerState();
 
   return (
     <>
-      <DrawerStateProvider>
-        <TopBar />
-        <Drawer />
-      </DrawerStateProvider>
+      <div
+        style={{
+          backdropFilter: "blur(10px)",
+          top: 0,
+          left: 0,
+          height: "100%",
+          width: "100%",
+        }}
+      />
+      <TopBar />
+      <Drawer />
       {pages.map((page, index) => (
         <section
           key={`section-${page.id}`}
@@ -33,9 +41,9 @@ const Main = () => {
           style={{
             height: "100vh",
             backgroundColor: colors[index % 2],
-            padding: 10,
+            padding: 40,
             color: "white",
-            fontSize: "2rem",
+            zIndex: 1,
           }}
         >
           {page.component}

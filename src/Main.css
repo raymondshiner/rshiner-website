@@ -1,7 +1,0 @@
-div.main {
-  height: 700;
-  backgroundcolor: randomColors[index % 3];
-  padding: 10;
-  color: "white";
-  fontsize: "2rem";
-}

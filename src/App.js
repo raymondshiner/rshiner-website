@@ -5,17 +5,20 @@ import {
   Route,
   Routes,
 } from "react-router-dom";
+import { DrawerStateProvider } from "state";
 import Main from "./Main";
 
 const App = () => {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Main />} />
-        {/* Redirect all other paths to home */}
-        <Route path="*" element={<Navigate to="/#home" />} />
-      </Routes>
-    </Router>
+    <DrawerStateProvider>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Main />} />
+          {/* Redirect all other paths to home */}
+          <Route path="*" element={<Navigate to="/#home" />} />
+        </Routes>
+      </Router>
+    </DrawerStateProvider>
   );
 };
 
