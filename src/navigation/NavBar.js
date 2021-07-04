@@ -1,42 +1,43 @@
 import useActiveNavItem from "hooks/useActiveNavItem";
-import useWindowHasScrolled from "hooks/useWindowHasScrolled";
 import { pages } from "Main";
 import React from "react";
-import { HashLink } from "react-router-hash-link";
-import "./NavBar.css";
+import styled from "styled-components";
+import Header from "./Header";
+import { Logo, NavItem } from "./NavItems";
 
 const NavBar = () => {
-  const windowHasScrolled = useWindowHasScrolled();
   const activeItem = useActiveNavItem();
 
-  const scrollWithOffset = (el) => {
-    const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;
-    const yOffset = -69;
-    window.scrollTo({ top: yCoordinate + yOffset, behavior: "smooth" });
-  };
-
   return (
-    <header className={windowHasScrolled ? "sticky" : ""}>
-      <HashLink className="logo" to={`#top`} smooth>
-        Raymond Shiner
-      </HashLink>
-      <ul>
+    <Header>
+      <Logo />
+      <NavList>
         {pages.map((page) => {
           return (
-            <li
-              key={`nav-${page.id}`}
-              id={`nav-${page.id}`}
-              className={page.id === activeItem ? "active" : ""}
-            >
-              <HashLink to={`#${page.id}`} smooth scroll={scrollWithOffset}>
-                {page.copy}
-              </HashLink>
-            </li>
+            <ListItem key={`nav-${page.id}`} active={activeItem === page.id}>
+              <NavItem to={page.id}>{page.copy}</NavItem>
+            </ListItem>
           );
         })}
-      </ul>
-    </header>
+      </NavList>
+    </Header>
   );
 };
 
 export default NavBar;
+
+const NavList = styled.ul`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const ListItem = styled.li`
+  min-width: fit-content;
+  list-style: none;
+  margin: 0 18px;
+  transition: linear 0.25s;
+
+  padding-bottom: ${(props) => props.active && "5px"};
+  border-bottom: ${(props) => props.active && "2px solid #2bc5e0"};
+`;
