@@ -1,8 +1,8 @@
 import useWindowDimensions from "hooks/useWindowDimensions";
 import React from "react";
-import Drawer from "./Drawer";
 import Header from "./Header";
-import { Logo } from "./NavItems";
+import Logo from "./Logo";
+import MenuButton from "./MenuButton";
 import NavMenu from "./NavMenu";
 
 const NavBar = () => {
@@ -11,7 +11,7 @@ const NavBar = () => {
   return (
     <Header>
       <Logo />
-      {width > 1200 ? <NavMenu /> : <Drawer />}
+      {width > 1200 ? <NavMenu /> : <MenuButton />}
     </Header>
   );
 };

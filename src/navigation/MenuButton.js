@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const HamburgerButton = ({ active, onClick }) => {
+const MenuButton = ({ active, onClick }) => {
   return (
     <HamburgerWrapper active={active} onClick={onClick}>
       <span />
@@ -36,4 +36,4 @@ const HamburgerWrapper = styled.div`
   }
 `;
 
-export default HamburgerButton;
+export default MenuButton;

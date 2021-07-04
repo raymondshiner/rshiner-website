@@ -1,5 +1,6 @@
+import { Drawer, TopBar } from "navigation";
 import React from "react";
-import TopBar from "./TopBar";
+import { DrawerStateProvider } from "state";
 
 const generatePage = (id, copy, component) => ({
   id,
@@ -21,24 +22,25 @@ const Main = () => {
 
   return (
     <>
-      <TopBar />
-      <div className="">
-        {pages.map((page, index) => (
-          <section
-            key={`section-${page.id}`}
-            id={page.id}
-            style={{
-              height: "100vh",
-              backgroundColor: colors[index % 2],
-              padding: 10,
-              color: "white",
-              fontSize: "2rem",
-            }}
-          >
-            {page.component}
-          </section>
-        ))}
-      </div>
+      <DrawerStateProvider>
+        <TopBar />
+        <Drawer />
+      </DrawerStateProvider>
+      {pages.map((page, index) => (
+        <section
+          key={`section-${page.id}`}
+          id={page.id}
+          style={{
+            height: "100vh",
+            backgroundColor: colors[index % 2],
+            padding: 10,
+            color: "white",
+            fontSize: "2rem",
+          }}
+        >
+          {page.component}
+        </section>
+      ))}
     </>
   );
 };
