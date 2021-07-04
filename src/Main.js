@@ -1,5 +1,5 @@
 import React from "react";
-import NavBar from "./navigation/NavBar";
+import TopBar from "./TopBar";
 
 const generatePage = (id, copy, component) => ({
   id,
@@ -21,7 +21,7 @@ const Main = () => {
 
   return (
     <>
-      <NavBar />
+      <TopBar />
       <div className="">
         {pages.map((page, index) => (
           <section

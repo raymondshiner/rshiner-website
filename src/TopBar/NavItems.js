@@ -29,7 +29,7 @@ const LogoNav = styled(NavItem).attrs((props) => ({
   font-size: 1.55rem;
   letter-spacing: 2px;
   min-width: fit-content;
-  margin-right: 30px;
+  margin-right: 50px;
   transition: 0.6s;
   border: 2px solid #2bc5e0;
   padding: 5px;
@@ -38,7 +38,7 @@ const LogoNav = styled(NavItem).attrs((props) => ({
 const Logo = () => {
   const { width } = useWindowDimensions();
 
-  const text = width > 500 ? "Raymond Shiner" : "Ray Shiner";
+  const text = width > 450 ? "Raymond Shiner" : "Raymond";
 
   return <LogoNav>{text}</LogoNav>;
 };

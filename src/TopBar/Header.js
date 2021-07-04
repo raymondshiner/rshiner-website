@@ -13,15 +13,15 @@ const StyledHeader = styled.header`
   width: 100%;
   top: 0;
   left: 0;
-  padding: ${(props) => (props.sticky ? "20px 100px;" : "40px 100px")};
+  padding: ${(props) => (props.sticky ? "20px 45px;" : "40px 45px")};
   background-color: ${(props) => props.sticky && "#191919"};
   display: flex;
   justify-content: space-between;
   align-items: center;
   transition: 0.6s;
 
-  @media (max-width: 550px) {
-    padding: ${(props) => (props.sticky ? "25px 30px" : "40px 30px")};
+  @media (max-width: 1280px) {
+    padding: ${(props) => (props.sticky ? "25px 45px" : "40px 45px")};
   }
 `;
 
