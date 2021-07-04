@@ -1,3 +1,4 @@
+import useWindowDimensions from "hooks/useWindowDimensions";
 import { HashLink } from "react-router-hash-link";
 import styled from "styled-components";
 
@@ -20,10 +21,9 @@ const NavItem = styled(HashLink).attrs((props) => ({
   font-weight: 500;
 `;
 
-const Logo = styled(NavItem).attrs((props) => ({
+const LogoNav = styled(NavItem).attrs((props) => ({
   scroll: null,
   to: "#top",
-  children: "Raymond Shiner",
 }))`
   font-weight: 700;
   font-size: 1.55rem;
@@ -34,5 +34,13 @@ const Logo = styled(NavItem).attrs((props) => ({
   border: 2px solid #2bc5e0;
   padding: 5px;
 `;
+
+const Logo = () => {
+  const { width } = useWindowDimensions();
+
+  const text = width > 500 ? "Raymond Shiner" : "Ray Shiner";
+
+  return <LogoNav>{text}</LogoNav>;
+};
 
 export { NavItem, Logo };

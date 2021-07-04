@@ -19,6 +19,10 @@ const StyledHeader = styled.header`
   justify-content: space-between;
   align-items: center;
   transition: 0.6s;
+
+  @media (max-width: 550px) {
+    padding: ${(props) => (props.sticky ? "25px 30px" : "40px 30px")};
+  }
 `;
 
 export default Header;
