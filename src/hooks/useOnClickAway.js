@@ -4,13 +4,8 @@ const useOnClickAway = (ref, onClickAway) => {
   useEffect(
     (event) => {
       const handleClickAway = (event) => {
-        const id = event.target.id;
-
-        if (id === "menuButton" || id === "menuButtonLine") {
-          return;
-        }
-
-        if (ref.current && !ref.current.contains(event.target)) onClickAway();
+        if (ref.current && !ref.current.contains(event.target))
+          onClickAway(event);
       };
 
       window.addEventListener("mousedown", handleClickAway);

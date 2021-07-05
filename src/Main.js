@@ -1,5 +1,6 @@
 import { Drawer, TopBar } from "navigation";
 import React from "react";
+import styled from "styled-components";
 
 const generatePage = (id, copy, component) => ({
   id,
@@ -21,34 +22,27 @@ const Main = () => {
 
   return (
     <>
-      <div
-        style={{
-          backdropFilter: "blur(10px)",
-          top: 0,
-          left: 0,
-          height: "100%",
-          width: "100%",
-        }}
-      />
       <TopBar />
       <Drawer />
       {pages.map((page, index) => (
-        <section
-          key={`section-${page.id}`}
+        <Section
           id={page.id}
-          style={{
-            height: "100vh",
-            backgroundColor: colors[index % 2],
-            padding: 40,
-            color: "white",
-            zIndex: 1,
-          }}
+          key={`section-${page.id}`}
+          color={colors[index % 2]}
         >
           {page.component}
-        </section>
+        </Section>
       ))}
     </>
   );
 };
 
 export default Main;
+
+const Section = styled.section`
+  height: 100vh;
+  padding: 40px;
+  background-color: ${(props) => props.color};
+  color: white;
+  z-index: 1;
+`;

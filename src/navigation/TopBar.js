@@ -1,5 +1,4 @@
-import useWindowDimensions from "hooks/useWindowDimensions";
-import useWindowHasScrolled from "hooks/useWindowHasScrolled";
+import { useWindowDimensions, useWindowHasScrolled } from "hooks";
 import React from "react";
 import styled from "styled-components";
 import Logo from "./Logo";
@@ -31,6 +30,6 @@ const Header = styled.header`
   justify-content: space-between;
   align-items: center;
   transition: 0.6s;
-  box-shadow: ${(props) => props.sticky && "0px 2px 6px 0px black"};
+  box-shadow: ${(props) => props.sticky && "0px 1px 2px 0px black"};
   z-index: 6;
 `;

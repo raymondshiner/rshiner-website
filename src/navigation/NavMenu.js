@@ -1,5 +1,5 @@
 import { NavItem } from "components";
-import useActiveNavItem from "hooks/useActiveNavItem";
+import { useActiveNavItem } from "hooks";
 import { pages } from "Main";
 import React from "react";
 import styled from "styled-components";

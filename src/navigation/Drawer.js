@@ -1,7 +1,5 @@
 import { NavItem } from "components";
-import useActiveNavItem from "hooks/useActiveNavItem";
-import useOnClickAway from "hooks/useOnClickAway";
-import useWindowHasScrolled from "hooks/useWindowHasScrolled";
+import { useActiveNavItem, useOnClickAway, useWindowHasScrolled } from "hooks";
 import React, { useEffect, useRef } from "react";
 import { useDrawerState } from "state";
 import styled from "styled-components";

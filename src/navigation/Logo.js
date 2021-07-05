@@ -1,5 +1,5 @@
 import { NavItem } from "components";
-import useWindowDimensions from "hooks/useWindowDimensions";
+import { useWindowDimensions } from "hooks";
 import styled from "styled-components";
 
 const LogoNav = styled(NavItem).attrs((props) => ({

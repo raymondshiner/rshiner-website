@@ -5,13 +5,7 @@ const MenuButton = () => {
   const { drawerOpen, setDrawerOpen } = useDrawerState();
 
   const toggleDrawer = () => {
-    if (!drawerOpen) {
-      console.log("false turning true");
-      setDrawerOpen(true);
-    } else {
-      console.log("true turning false");
-      setDrawerOpen(false);
-    }
+    setDrawerOpen(!drawerOpen);
   };
 
   return (
