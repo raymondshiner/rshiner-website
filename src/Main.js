@@ -1,5 +1,6 @@
+import { Drawer, TopBar } from "navigation";
 import React from "react";
-import NavBar from "./navigation/NavBar";
+import styled from "styled-components";
 
 const generatePage = (id, copy, component) => ({
   id,
@@ -21,26 +22,27 @@ const Main = () => {
 
   return (
     <>
-      <NavBar />
-      <div className="">
-        {pages.map((page, index) => (
-          <section
-            key={`section-${page.id}`}
-            id={page.id}
-            style={{
-              height: "100vh",
-              backgroundColor: colors[index % 2],
-              padding: 10,
-              color: "white",
-              fontSize: "2rem",
-            }}
-          >
-            {page.component}
-          </section>
-        ))}
-      </div>
+      <TopBar />
+      <Drawer />
+      {pages.map((page, index) => (
+        <Section
+          id={page.id}
+          key={`section-${page.id}`}
+          color={colors[index % 2]}
+        >
+          {page.component}
+        </Section>
+      ))}
     </>
   );
 };
 
 export default Main;
+
+const Section = styled.section`
+  height: 100vh;
+  padding: 40px;
+  background-color: ${(props) => props.color};
+  color: white;
+  z-index: 1;
+`;
