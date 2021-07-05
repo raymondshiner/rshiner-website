@@ -1,6 +1,5 @@
 import { Drawer, TopBar } from "navigation";
 import React from "react";
-import { useDrawerState } from "state";
 
 const generatePage = (id, copy, component) => ({
   id,
@@ -19,7 +18,6 @@ export const pages = [
 
 const Main = () => {
   const colors = ["black", "#191919"];
-  const { drawerOpen } = useDrawerState();
 
   return (
     <>

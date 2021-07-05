@@ -1,15 +1,29 @@
 import { NavItem } from "components";
 import useActiveNavItem from "hooks/useActiveNavItem";
+import useOnClickAway from "hooks/useOnClickAway";
 import useWindowHasScrolled from "hooks/useWindowHasScrolled";
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { useDrawerState } from "state";
 import styled from "styled-components";
 import { pages } from "../Main";
 
 const Drawer = () => {
-  const activeItem = useActiveNavItem();
+  const drawerRef = useRef(null);
   const { drawerOpen, setDrawerOpen } = useDrawerState();
+  const activeItem = useActiveNavItem();
   const windowHasScrolled = useWindowHasScrolled();
+
+  const closeDrawerIgnoreMenuButton = (event) => {
+    if (
+      event?.target.id === "menuButton" ||
+      event?.target.id === "menuButtonLine"
+    )
+      return;
+
+    setDrawerOpen(false);
+  };
+
+  useOnClickAway(drawerRef, closeDrawerIgnoreMenuButton);
 
   useEffect(() => {
     const closeDrawerOnWindowResize = () => {
@@ -21,7 +35,7 @@ const Drawer = () => {
     return () => {
       window.removeEventListener("resize", closeDrawerOnWindowResize);
     };
-  }, []);
+  }, [setDrawerOpen]);
 
   const closeDrawerWithDelay = () =>
     setTimeout(() => {
@@ -29,16 +43,15 @@ const Drawer = () => {
     }, 250);
 
   return (
-    <StyledDrawer open={drawerOpen} sticky={windowHasScrolled}>
+    <StyledDrawer open={drawerOpen} sticky={windowHasScrolled} ref={drawerRef}>
       {pages.map((page) => {
         return (
           <ListItem
+            key={page.id}
             active={activeItem === page.id}
             onClick={closeDrawerWithDelay}
           >
-            <NavItem key={page.id} to={page.id}>
-              {page.copy}
-            </NavItem>
+            <NavItem to={page.id}>{page.copy}</NavItem>
           </ListItem>
         );
       })}
@@ -55,12 +68,14 @@ const StyledDrawer = styled.div`
   padding: 40px;
   position: fixed;
   top: 0;
-  right: ${(props) => (props.open ? "0" : "-220px")};
+  right: ${(props) => (props.open ? "0" : "-230px")};
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   justify-content: center;
   transition: 0.5s;
+  box-shadow: -2px 0px 10px 1px
+    ${(props) => (props.sticky ? "black" : "#191919")};
   z-index: 2;
 `;
 

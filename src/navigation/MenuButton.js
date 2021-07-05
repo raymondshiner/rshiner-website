@@ -4,13 +4,21 @@ import styled from "styled-components";
 const MenuButton = () => {
   const { drawerOpen, setDrawerOpen } = useDrawerState();
 
-  const toggleDrawer = () => setDrawerOpen(!drawerOpen);
+  const toggleDrawer = () => {
+    if (!drawerOpen) {
+      console.log("false turning true");
+      setDrawerOpen(true);
+    } else {
+      console.log("true turning false");
+      setDrawerOpen(false);
+    }
+  };
 
   return (
-    <HamburgerButton active={drawerOpen} onClick={toggleDrawer}>
-      <span />
-      <span />
-      <span />
+    <HamburgerButton id="menuButton" active={drawerOpen} onClick={toggleDrawer}>
+      <span id="menuButtonLine" />
+      <span id="menuButtonLine" />
+      <span id="menuButtonLine" />
     </HamburgerButton>
   );
 };
