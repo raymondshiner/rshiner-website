@@ -1,9 +1,9 @@
 import { NavItem } from "components";
+import { colors, pages } from "data";
 import { useActiveNavItem, useOnClickAway, useWindowHasScrolled } from "hooks";
 import React, { useEffect, useRef } from "react";
 import { useDrawerState } from "state";
 import styled from "styled-components";
-import { pages } from "../Main";
 
 const Drawer = () => {
   const drawerRef = useRef(null);
@@ -62,7 +62,7 @@ export default Drawer;
 const StyledDrawer = styled.div`
   width: 220px;
   height: 100vh;
-  background-color: ${(props) => (props.sticky ? "#191919" : "black")};
+  background-color: ${(props) => (props.sticky ? colors.dark : "black")};
   padding: 40px;
   position: fixed;
   top: 0;
@@ -73,7 +73,7 @@ const StyledDrawer = styled.div`
   justify-content: center;
   transition: 0.5s;
   box-shadow: -2px 0px 10px 1px
-    ${(props) => (props.sticky ? "black" : "#191919")};
+    ${(props) => (props.sticky ? "black" : colors.dark)};
   z-index: 2;
 `;
 
@@ -84,8 +84,8 @@ const ListItem = styled.li`
   padding-right: ${"5px"};
 
   a {
-    color: ${(props) => props.active && "#2bc5e0"};
+    color: ${(props) => props.active && colors.blue};
   }
 
-  border-right: ${(props) => props.active && "2px solid #2bc5e0"};
+  border-right: ${(props) => props.active && `2px solid ${colors.blue}`};
 `;

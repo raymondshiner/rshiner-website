@@ -12,6 +12,6 @@ const Hero = () => {
 export default Hero;
 
 const MainText = styled.h1`
-  width: 100%;
-  font-size: xxx-large;
+  font-size: clamp(3.3rem, 10vw, 5rem);
+  border-bottom: 2px;
 `;

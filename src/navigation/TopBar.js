@@ -1,3 +1,4 @@
+import { colors } from "data";
 import { useWindowDimensions, useWindowHasScrolled } from "hooks";
 import React from "react";
 import styled from "styled-components";
@@ -24,7 +25,7 @@ const Header = styled.header`
   width: 100%;
   top: 0;
   left: 0;
-  background-color: ${(props) => (props.sticky ? "#191919" : "black")};
+  background-color: ${(props) => (props.sticky ? colors.dark : "black")};
   padding: ${(props) => (props.sticky ? "20px 40px;" : "40px")};
   display: flex;
   justify-content: space-between;

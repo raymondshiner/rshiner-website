@@ -1,4 +1,5 @@
 import { NavItem } from "components";
+import { colors } from "data";
 import { useWindowDimensions } from "hooks";
 import styled from "styled-components";
 
@@ -12,7 +13,7 @@ const LogoNav = styled(NavItem).attrs((props) => ({
   min-width: fit-content;
   margin-right: 50px;
   transition: 0.6s;
-  border: 2px solid #2bc5e0;
+  border: 2px solid ${colors.blue};
   padding: 5px;
 `;
 

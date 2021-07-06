@@ -1,22 +1,7 @@
+import { pages } from "data";
 import { Drawer, TopBar } from "navigation";
-import { Hero } from "pages";
 import React from "react";
 import styled from "styled-components";
-
-const generatePage = (id, copy, component) => ({
-  id,
-  copy,
-  component,
-});
-
-export const pages = [
-  generatePage("home", "Home", <Hero />),
-  generatePage("about", "About Me", <div>I'm an About</div>),
-  generatePage("cv", "Resume/CV", <div>I'm an Resume/CV</div>),
-  generatePage("portfolio", "Portfolio", <div>I'm an Portfolio</div>),
-  generatePage("blog", "Blog", <div>I'm an Blog</div>),
-  generatePage("contact", "Contact", <div>I'm an Contact</div>),
-];
 
 const Main = () => {
   const colors = ["black", "#191919"];
