@@ -1,16 +1,21 @@
-import { pages } from "data";
 import { Drawer, TopBar } from "navigation";
+import { meta as pagesMeta } from "pages";
 import React from "react";
-import styled from "styled-components";
+import styled, { ThemeProvider } from "styled-components";
+
+const theme = {
+  primary: "#2bc5e0",
+  dark: "",
+};
 
 const Main = () => {
   const colors = ["black", "#191919"];
 
   return (
-    <>
+    <ThemeProvider theme={theme}>
       <TopBar />
       <Drawer />
-      {pages.map((page, index) => (
+      {pagesMeta.map((page, index) => (
         <Section
           id={page.id}
           key={`section-${page.id}`}
@@ -19,7 +24,7 @@ const Main = () => {
           {page.component}
         </Section>
       ))}
-    </>
+    </ThemeProvider>
   );
 };
 
@@ -31,8 +36,4 @@ const Section = styled.section`
   background-color: ${(props) => props.color};
   color: white;
   z-index: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
 `;

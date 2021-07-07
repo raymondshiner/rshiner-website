@@ -1,5 +1,5 @@
 import React from "react";
-import { Hero } from "./pages";
+import Hero from "./Hero";
 
 const generatePage = (id, copy, component) => ({
   id,
@@ -7,12 +7,7 @@ const generatePage = (id, copy, component) => ({
   component,
 });
 
-export const colors = {
-  blue: "#2bc5e0",
-  dark: "#191919",
-};
-
-export const pages = [
+export const meta = [
   generatePage("home", "Home", <Hero />),
   generatePage("about", "About Me", <div>I'm an About</div>),
   generatePage("cv", "Resume/CV", <div>I'm an Resume/CV</div>),

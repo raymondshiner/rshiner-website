@@ -1,6 +1,6 @@
 import { NavItem } from "components";
-import { colors, pages } from "data";
 import { useActiveNavItem } from "hooks";
+import { meta as pagesMeta } from "pages";
 import React from "react";
 import styled from "styled-components";
 
@@ -18,7 +18,8 @@ const ListItem = styled.li`
   transition: linear 0.25s;
 
   padding-bottom: ${(props) => props.active && "5px"};
-  border-bottom: ${(props) => props.active && `2px solid ${colors.blue}`};
+  border-bottom: ${(props) =>
+    props.active && `2px solid ${props.theme.primary}`};
 `;
 
 const NavMenu = () => {
@@ -26,7 +27,7 @@ const NavMenu = () => {
 
   return (
     <NavList>
-      {pages.map((page) => {
+      {pagesMeta.map((page) => {
         return (
           <ListItem key={`nav-${page.id}`} active={activeItem === page.id}>
             <NavItem to={page.id}>{page.copy}</NavItem>
