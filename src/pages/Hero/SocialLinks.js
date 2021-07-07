@@ -20,7 +20,9 @@ const IconWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  width: 100%;
-  max-width: 500px;
-  margin-top: 30px;
+  width: 80%;
+  max-width: 400px;
+  padding: 20px 5px;
+  border-radius: 50px;
+  background-color: ${(props) => props.theme.dark};
 `;

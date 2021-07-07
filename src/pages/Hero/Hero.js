@@ -23,20 +23,21 @@ export default Hero;
 
 const HeroWrapper = styled.div`
   position: relative;
+  overflow: hidden;
 `;
 
 const StyledParticles = styled(Particles)`
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
   height: 100%;
+  width: 100%;
+  transition: all 0.5s ease;
 `;
 
 const FlexBoxColumn = styled.div`
   position: relative;
   height: 100%;
-  margin-top: 90px;
   flex-wrap: nowrap;
   flex-direction: column;
   justify-content: center;
@@ -45,6 +46,7 @@ const FlexBoxColumn = styled.div`
 `;
 
 const MainText = styled.h1`
+  margin-top: 80px;
   background-color: black;
   font-size: clamp(3.3rem, 10vw, 6.5rem);
   width: fit-content;
