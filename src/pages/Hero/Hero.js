@@ -25,6 +25,7 @@ const HeroWrapper = styled.div`
   position: relative;
   overflow: hidden;
   height: 100%;
+  width: 100%;
 `;
 
 const StyledParticles = styled(Particles)`

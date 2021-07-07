@@ -37,4 +37,8 @@ const Section = styled.section`
   background-color: ${(props) => props.color};
   color: white;
   z-index: 1;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
 `;
