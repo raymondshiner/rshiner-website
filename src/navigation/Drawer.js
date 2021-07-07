@@ -1,9 +1,9 @@
 import { NavItem } from "components";
 import { useActiveNavItem, useOnClickAway, useWindowHasScrolled } from "hooks";
+import { meta as pagesMeta } from "pages";
 import React, { useEffect, useRef } from "react";
 import { useDrawerState } from "state";
 import styled from "styled-components";
-import { pages } from "../Main";
 
 const Drawer = () => {
   const drawerRef = useRef(null);
@@ -42,7 +42,7 @@ const Drawer = () => {
 
   return (
     <StyledDrawer open={drawerOpen} sticky={windowHasScrolled} ref={drawerRef}>
-      {pages.map((page) => {
+      {pagesMeta.map((page) => {
         return (
           <ListItem
             key={page.id}
@@ -62,7 +62,7 @@ export default Drawer;
 const StyledDrawer = styled.div`
   width: 220px;
   height: 100vh;
-  background-color: ${(props) => (props.sticky ? "#191919" : "black")};
+  background-color: ${(props) => (props.sticky ? props.theme.dark : "black")};
   padding: 40px;
   position: fixed;
   top: 0;
@@ -73,7 +73,7 @@ const StyledDrawer = styled.div`
   justify-content: center;
   transition: 0.5s;
   box-shadow: -2px 0px 10px 1px
-    ${(props) => (props.sticky ? "black" : "#191919")};
+    ${(props) => (props.sticky ? "black" : props.theme.dark)};
   z-index: 2;
 `;
 
@@ -84,8 +84,8 @@ const ListItem = styled.li`
   padding-right: ${"5px"};
 
   a {
-    color: ${(props) => props.active && "#2bc5e0"};
+    color: ${(props) => props.active && props.theme.blue};
   }
 
-  border-right: ${(props) => props.active && "2px solid #2bc5e0"};
+  border-right: ${(props) => props.active && `2px solid ${props.theme.blue}`};
 `;

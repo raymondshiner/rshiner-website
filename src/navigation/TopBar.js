@@ -24,12 +24,12 @@ const Header = styled.header`
   width: 100%;
   top: 0;
   left: 0;
-  background-color: ${(props) => (props.sticky ? "#191919" : "black")};
+  background-color: ${(props) => (props.sticky ? props.theme.dark : "")};
   padding: ${(props) => (props.sticky ? "20px 40px;" : "40px")};
   display: flex;
   justify-content: space-between;
   align-items: center;
-  transition: 0.6s;
-  box-shadow: ${(props) => props.sticky && "0px 1px 2px 0px black"};
+  transition: all ease 0.4s;
+  box-shadow: ${(props) => props.sticky && "0px 2px 5px 0px black"};
   z-index: 6;
 `;
