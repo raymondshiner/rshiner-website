@@ -1,7 +1,8 @@
+import { AboutMePicture } from "assets";
 import React from "react";
 
 const AboutMe = () => {
-  return <div>I'm a AboutMe</div>;
+  return <AboutMePicture />;
 };
 
 export default AboutMe;
