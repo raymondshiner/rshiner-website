@@ -20,8 +20,8 @@ const Hero = () => {
               "Unit Tester",
             ]}
             typeSpeed={30}
-            backSpeed={65}
-            backDelay={3000}
+            backSpeed={80}
+            backDelay={1700}
             cursorChar={"_"}
             loop
           />
