@@ -1,6 +1,6 @@
 import { NavItem } from "components";
 import { useActiveNavItem } from "hooks";
-import { meta as pagesMeta } from "pages";
+import { pages } from "pages";
 import React from "react";
 import styled from "styled-components";
 
@@ -27,7 +27,7 @@ const NavMenu = () => {
 
   return (
     <NavList>
-      {pagesMeta.map((page) => {
+      {pages.map((page) => {
         return (
           <ListItem key={`nav-${page.id}`} active={activeItem === page.id}>
             <NavItem to={page.id}>{page.copy}</NavItem>
