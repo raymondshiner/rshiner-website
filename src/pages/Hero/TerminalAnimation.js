@@ -4,52 +4,25 @@ import React from "react";
 import Typed from "react-typed";
 import styled from "styled-components";
 
-const Hero = () => {
-  return (
-    <>
-      <FlexBoxColumn>
-        <MainText>Raymond Shiner</MainText>
-        <TerminalBox>
-          <TerminalIcon />
-          <VerticalDivider />
-          <TypeWriter
-            strings={[
-              "React Developer",
-              "JavaScript Developer",
-              "Technical Writer",
-              "Unit Tester",
-            ]}
-            typeSpeed={30}
-            backSpeed={80}
-            backDelay={1700}
-            cursorChar={"_"}
-            loop
-          />
-        </TerminalBox>
-      </FlexBoxColumn>
-    </>
-  );
-};
-
-export default Hero;
-
-const FlexBoxColumn = styled.div`
-  height: 100%;
-  margin-top: 90px;
-  flex-wrap: nowrap;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  display: flex;
-`;
-
-const MainText = styled.h1`
-  font-size: clamp(3.3rem, 10vw, 6.5rem);
-  width: fit-content;
-  min-width: 300px;
-  padding: 20px;
-  border: ${(props) => `5px solid ${props.theme.primary}`};
-`;
+const TerminalAnimation = () => (
+  <TerminalBox>
+    <TerminalIcon />
+    <VerticalDivider />
+    <TypeWriter
+      strings={[
+        "React Developer",
+        "JavaScript Developer",
+        "Technical Writer",
+        "Unit Tester",
+      ]}
+      typeSpeed={30}
+      backSpeed={80}
+      backDelay={1700}
+      cursorChar={"_"}
+      loop
+    />
+  </TerminalBox>
+);
 
 const TerminalBox = styled.div`
   margin: 25px;
@@ -98,3 +71,5 @@ const TypeWriter = styled(Typed)`
   letter-spacing: 3px;
   transition: all ease 0.5s;
 `;
+
+export default TerminalAnimation;
