@@ -29,7 +29,7 @@ const Header = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  transition: 0.6s;
+  transition: all ease 0.6s;
   box-shadow: ${(props) => props.sticky && "0px 1px 2px 0px black"};
   z-index: 6;
 `;

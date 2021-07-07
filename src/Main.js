@@ -5,7 +5,7 @@ import styled, { ThemeProvider } from "styled-components";
 
 const theme = {
   primary: "#2bc5e0",
-  dark: "",
+  dark: "#191919",
 };
 
 const Main = () => {
@@ -31,7 +31,6 @@ const Main = () => {
 export default Main;
 
 const Section = styled.section`
-  height: 100vh;
   padding: 40px;
   background-color: ${(props) => props.color};
   color: white;

@@ -9,12 +9,13 @@ const Hero = () => {
     <>
       <FlexBoxColumn>
         <MainText>Raymond Shiner</MainText>
-        <RoundedBox>
+        <TerminalBox>
           <TerminalIcon />
+          <VerticalDivider />
           <TypeWriter
             strings={[
-              "React Dev",
-              "JavaScript Dev",
+              "React Developer",
+              "JavaScript Developer",
               "Technical Writer",
               "Unit Tester",
             ]}
@@ -24,7 +25,7 @@ const Hero = () => {
             cursorChar={"_"}
             loop
           />
-        </RoundedBox>
+        </TerminalBox>
       </FlexBoxColumn>
     </>
   );
@@ -32,33 +33,9 @@ const Hero = () => {
 
 export default Hero;
 
-const RoundedBox = styled.div`
-  padding-bottom: 20px;
-  /* border-radius: 25px; */
-  display: flex;
-  flex-wrap: nowrap;
-  overflow-x: scroll;
-`;
-
-const TerminalIcon = styled(FontAwesomeIcon).attrs({
-  icon: faTerminal,
-})`
-  font-size: 3.5rem;
-  margin-right: 20px;
-  color: ${(props) => props.theme.primary};
-`;
-
-const TypeWriter = styled(Typed)`
-  font-size: 3rem;
-  letter-spacing: 4px;
-  white-space: nowrap;
-  max-width: 50%;
-  min-width: 50vw;
-`;
-
 const FlexBoxColumn = styled.div`
-  width: 100%;
   height: 100%;
+  margin-top: 90px;
   flex-wrap: nowrap;
   flex-direction: column;
   justify-content: center;
@@ -67,6 +44,57 @@ const FlexBoxColumn = styled.div`
 `;
 
 const MainText = styled.h1`
-  font-size: clamp(3.3rem, 15vw, 6rem);
-  margin-bottom: 20px;
+  font-size: clamp(3.3rem, 10vw, 6.5rem);
+  width: fit-content;
+  min-width: 300px;
+  padding: 20px;
+  border: ${(props) => `5px solid ${props.theme.primary}`};
+`;
+
+const TerminalBox = styled.div`
+  margin: 25px;
+  padding: 20px;
+
+  @media (min-width: 700px) {
+    padding: 40px;
+  }
+  display: flex;
+  align-items: center;
+  height: clamp(100px, 25vw, 240px);
+  width: clamp(300px, 90%, 850px);
+  background-color: ${(props) => props.theme.dark};
+  border-radius: 20px;
+  overflow: hidden;
+  transition: all ease 0.5s;
+`;
+
+const TerminalIcon = styled(FontAwesomeIcon).attrs({
+  icon: faTerminal,
+})`
+  font-size: clamp(3rem, 10vw, 5rem);
+  color: ${(props) => props.theme.primary};
+  transition: all ease 0.5s;
+`;
+
+const VerticalDivider = styled.div`
+  height: clamp(50px, 100%, 150px);
+  border-left: 2px solid grey;
+
+  margin: 0px 15px;
+
+  @media (min-width: 40px) {
+    margin: 0px 20px;
+  }
+
+  @media (min-width: 800px) {
+    margin: 0px 40px;
+  }
+
+  transition: all ease 0.5s;
+`;
+
+const TypeWriter = styled(Typed)`
+  font-size: clamp(1rem, 7vw, 4rem);
+  letter-spacing: 3px;
+  transition: all ease 0.5s;
 `;
