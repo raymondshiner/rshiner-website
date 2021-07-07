@@ -6,7 +6,7 @@ const GithubLogo = () => {
     <img
       src={githubLogo}
       alt="github"
-      style={{ height: "5vw", minHeight: 50 }}
+      style={{ height: "5vw", minHeight: 50, maxHeight: 70 }}
     />
   );
 };

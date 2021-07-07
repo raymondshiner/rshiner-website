@@ -84,8 +84,9 @@ const ListItem = styled.li`
   padding-right: ${"5px"};
 
   a {
-    color: ${(props) => props.active && props.theme.blue};
+    color: ${(props) => props.active && props.theme.primary};
   }
 
-  border-right: ${(props) => props.active && `2px solid ${props.theme.blue}`};
+  border-right: ${(props) =>
+    props.active && `2px solid ${props.theme.primary}`};
 `;

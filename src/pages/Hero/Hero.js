@@ -24,6 +24,7 @@ export default Hero;
 const HeroWrapper = styled.div`
   position: relative;
   overflow: hidden;
+  height: 100%;
 `;
 
 const StyledParticles = styled(Particles)`
@@ -46,11 +47,13 @@ const FlexBoxColumn = styled.div`
 `;
 
 const MainText = styled.h1`
-  margin-top: 80px;
   background-color: black;
   font-size: clamp(3.3rem, 10vw, 6.5rem);
   width: fit-content;
   min-width: 300px;
   padding: 20px;
   border: ${(props) => `5px solid ${props.theme.primary}`};
+  @media (max-height: 750px) and (min-width: 800px) {
+    margin-top: 80px;
+  }
 `;
