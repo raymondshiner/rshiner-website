@@ -13,16 +13,6 @@ const Logo = () => {
 
 export default Logo;
 
-const BoxOutline = styled.div`
-  width: 40px;
-  height: 100px;
-  position: relative;
-  top: -10px;
-  left: -10px;
-  border: 1px solid white;
-  z-index: 1;
-`;
-
 const LogoNav = styled(NavItem).attrs((props) => ({
   scroll: null,
   to: "#top",
