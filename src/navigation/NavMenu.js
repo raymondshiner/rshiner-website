@@ -1,4 +1,4 @@
-import { StyledHashLink } from "components";
+import { NavItem } from "components";
 import { useActiveNavItem } from "hooks";
 import { pages } from "pages";
 import React from "react";
@@ -11,26 +11,6 @@ const NavList = styled.ul`
   transition: linear 1s;
 `;
 
-const ListItem = styled.li`
-  min-width: fit-content;
-  list-style: none;
-  margin: 0 14px;
-  padding: 2px 4px;
-  transition: ease 0.3s;
-
-  padding-bottom: ${(props) => props.active && "5px"};
-  border-bottom: ${(props) =>
-    props.active && `2px solid ${props.theme.primary}`};
-
-  :hover {
-    transform: translateY(-3px);
-  }
-  :active {
-    transition: none;
-    transform: translateY(1px);
-  }
-`;
-
 const NavMenu = () => {
   const activeItem = useActiveNavItem();
 
@@ -38,9 +18,13 @@ const NavMenu = () => {
     <NavList>
       {pages.map((page) => {
         return (
-          <ListItem key={`nav-${page.id}`} active={activeItem === page.id}>
-            <StyledHashLink to={page.id}>{page.copy}</StyledHashLink>
-          </ListItem>
+          <NavItem
+            key={`nav-${page.id}`}
+            to={page.id}
+            active={activeItem === page.id}
+          >
+            {page.copy}
+          </NavItem>
         );
       })}
     </NavList>
@@ -48,5 +32,3 @@ const NavMenu = () => {
 };
 
 export default NavMenu;
-
-// saving this for later transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1) 0s;

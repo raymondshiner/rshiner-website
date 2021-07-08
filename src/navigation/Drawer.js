@@ -1,4 +1,4 @@
-import { StyledHashLink } from "components";
+import { NavItem } from "components";
 import { useActiveNavItem, useOnClickAway, useWindowHasScrolled } from "hooks";
 import { pages } from "pages";
 import React, { useEffect, useRef } from "react";
@@ -44,13 +44,15 @@ const Drawer = () => {
     <StyledDrawer open={drawerOpen} sticky={windowHasScrolled} ref={drawerRef}>
       {pages.map((page) => {
         return (
-          <ListItem
+          <NavItem
             key={page.id}
+            to={page.id}
             active={activeItem === page.id}
             onClick={closeDrawerWithDelay}
+            drawer
           >
-            <StyledHashLink to={page.id}>{page.copy}</StyledHashLink>
-          </ListItem>
+            {page.copy}
+          </NavItem>
         );
       })}
     </StyledDrawer>
@@ -75,28 +77,4 @@ const StyledDrawer = styled.div`
   box-shadow: -2px 0px 10px 1px
     ${(props) => (props.sticky ? "black" : props.theme.dark)};
   z-index: 2;
-`;
-
-const ListItem = styled.li`
-  min-width: fit-content;
-  list-style: none;
-  margin: 12px 0px;
-  padding-right: ${"5px"};
-
-  a {
-    color: ${(props) => props.active && props.theme.primary};
-  }
-
-  border-right: ${(props) =>
-    props.active && `2px solid ${props.theme.primary}`};
-
-  transition: all 0.3s;
-
-  :hover {
-    transform: translateY(-3px);
-  }
-  :active {
-    transition: none;
-    transform: translateY(1px);
-  }
 `;
