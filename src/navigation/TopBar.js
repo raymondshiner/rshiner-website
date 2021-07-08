@@ -12,7 +12,11 @@ const NavBar = () => {
   return (
     <Header sticky={windowHasScrolled}>
       <Logo sticky={windowHasScrolled} />
-      {width > 1200 ? <NavMenu /> : <MenuButton sticky={windowHasScrolled} />}
+      {width > 1200 ? (
+        <NavMenu sticky={windowHasScrolled} />
+      ) : (
+        <MenuButton sticky={windowHasScrolled} />
+      )}
     </Header>
   );
 };

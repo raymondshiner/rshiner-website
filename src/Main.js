@@ -33,6 +33,7 @@ export default Main;
 const Section = styled.section`
   background-color: ${(props) => props.color};
   color: white;
+  min-height: 500px;
   z-index: 1;
   display: flex;
   align-items: center;

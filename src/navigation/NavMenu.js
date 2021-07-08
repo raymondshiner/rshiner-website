@@ -16,20 +16,33 @@ const ListItem = styled.li`
   list-style: none;
   margin: 0 18px;
   transition: linear 0.25s;
+  background-color: ${(props) => (props.sticky ? "" : "black")};
 
   padding-bottom: ${(props) => props.active && "5px"};
   border-bottom: ${(props) =>
     props.active && `2px solid ${props.theme.primary}`};
+
+  :hover {
+    transform: translateY(-3px);
+  }
+  :active {
+    transition: none;
+    transform: translateY(1px);
+  }
 `;
 
-const NavMenu = () => {
+const NavMenu = ({ sticky }) => {
   const activeItem = useActiveNavItem();
 
   return (
     <NavList>
       {pages.map((page) => {
         return (
-          <ListItem key={`nav-${page.id}`} active={activeItem === page.id}>
+          <ListItem
+            key={`nav-${page.id}`}
+            active={activeItem === page.id}
+            sticky={sticky}
+          >
             <NavItem to={page.id}>{page.copy}</NavItem>
           </ListItem>
         );
