@@ -21,6 +21,7 @@ const ListItem = styled.li`
   list-style: none;
   margin: 0 14px;
   padding: 2px;
+  cursor: pointer;
 
   a {
     color: ${(props) => props.active && props.theme.primary};
