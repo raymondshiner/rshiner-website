@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled, { css } from "styled-components";
 import Education from "./Education";
-import Experience from "./Experience";
+import Experience from "./Experience/Experience";
 import Skills from "./Skills";
 
 const tabs = {
@@ -14,26 +14,39 @@ const Resume = () => {
   const [activeTab, setActiveTab] = useState("experience");
 
   return (
-    <Wrapper>
-      <TabWrapper>
+    <ResumeWrapper>
+      <ButtonWrapper>
         {Object.keys(tabs).map((tab) => (
-          <Tab
+          <Button
             key={tab}
             active={activeTab === tab}
             onClick={() => setActiveTab(tab)}
           >
             {tab}
-          </Tab>
+          </Button>
         ))}
-      </TabWrapper>
+      </ButtonWrapper>
       <ComponentWrapper>{tabs[activeTab]}</ComponentWrapper>
-    </Wrapper>
+    </ResumeWrapper>
   );
 };
 
 export default Resume;
 
-const Tab = styled.div`
+const ResumeWrapper = styled.div`
+  padding-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+const ButtonWrapper = styled.div`
+  display: flex;
+  width: 40%;
+  justify-content: space-evenly;
+`;
+
+const Button = styled.div`
   text-transform: uppercase;
   margin: 0px 8px;
   padding: 10px;
@@ -58,18 +71,6 @@ const Tab = styled.div`
       color: black;
       background-color: ${props.theme.primary};
     `}
-`;
-
-const Wrapper = styled.div`
-  padding: 40px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
-
-const TabWrapper = styled.div`
-  display: flex;
-  justify-content: space-evenly;
 `;
 
 const ComponentWrapper = styled.div`

@@ -63,7 +63,7 @@ const Description = styled.p`
   font-weight: 300;
   line-height: 30px;
   font-size: clamp(0.8rem, 5vw, 1.3rem);
-  color: #dddddddd;
+  color: ${(props) => props.theme.secondaryText};
   margin: 8px 0;
 `;
 

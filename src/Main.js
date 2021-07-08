@@ -1,11 +1,20 @@
 import { Drawer, TopBar } from "navigation";
 import { pages } from "pages";
 import React from "react";
-import styled, { ThemeProvider } from "styled-components";
+import styled, { css, ThemeProvider } from "styled-components";
 
 const theme = {
   primary: "#2bc5e0",
   dark: "#191919",
+  secondaryText: "#dddddddd",
+  fadeIn: css`
+    animation: fade 2s;
+    @keyframes fade {
+      from {
+        opacity: 0;
+      }
+    }
+  `,
 };
 
 const Main = () => {
