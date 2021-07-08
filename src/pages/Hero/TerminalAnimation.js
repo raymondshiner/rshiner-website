@@ -15,8 +15,8 @@ const TerminalAnimation = () => (
         "Technical Writer",
         "Unit Tester",
       ]}
-      typeSpeed={30}
-      backSpeed={80}
+      typeSpeed={70}
+      backSpeed={30}
       backDelay={1700}
       cursorChar={"_"}
       loop
@@ -33,7 +33,8 @@ const TerminalBox = styled.div`
   }
   display: flex;
   align-items: center;
-  height: clamp(100px, 25vw, 240px);
+  height: clamp(50px, 25vw, 240px);
+  min-height: 150px;
   width: clamp(300px, 90%, 850px);
   background-color: ${(props) => props.theme.dark};
   border-radius: 20px;

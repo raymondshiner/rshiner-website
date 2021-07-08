@@ -31,9 +31,6 @@ const Main = () => {
 export default Main;
 
 const Section = styled.section`
-  padding: 40px;
-  height: 100vh;
-  min-height: 650px;
   background-color: ${(props) => props.color};
   color: white;
   z-index: 1;

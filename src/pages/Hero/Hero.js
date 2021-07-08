@@ -6,25 +6,23 @@ import TerminalAnimation from "./TerminalAnimation";
 
 const Hero = () => {
   return (
-    <>
-      <HeroWrapper>
-        <StyledParticles />
-        <FlexBoxColumn>
-          <MainText>Raymond Shiner</MainText>
-          <TerminalAnimation />
-          <SocialLinks />
-        </FlexBoxColumn>
-      </HeroWrapper>
-    </>
+    <HeroWrapper>
+      <StyledParticles />
+      <FlexBoxColumn>
+        <MainText>Raymond Shiner</MainText>
+        <TerminalAnimation />
+        <SocialLinks />
+      </FlexBoxColumn>
+    </HeroWrapper>
   );
 };
 
 export default Hero;
 
 const HeroWrapper = styled.div`
+  padding: 40px;
   position: relative;
-  overflow: hidden;
-  height: 100%;
+  height: 100vh;
   width: 100%;
 `;
 
@@ -32,6 +30,7 @@ const StyledParticles = styled(Particles)`
   position: absolute;
   top: 0;
   left: 0;
+  padding: 15px;
   height: 100%;
   width: 100%;
   transition: all 0.5s ease;
@@ -54,6 +53,7 @@ const MainText = styled.h1`
   min-width: 300px;
   padding: 20px;
   border: ${(props) => `5px solid ${props.theme.primary}`};
+  margin-top: 20px;
   @media (max-height: 750px) and (min-width: 800px) {
     margin-top: 80px;
   }

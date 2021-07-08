@@ -11,8 +11,8 @@ const NavBar = () => {
 
   return (
     <Header sticky={windowHasScrolled}>
-      <Logo />
-      {width > 1200 ? <NavMenu /> : <MenuButton />}
+      <Logo sticky={windowHasScrolled} />
+      {width > 1200 ? <NavMenu /> : <MenuButton sticky={windowHasScrolled} />}
     </Header>
   );
 };
