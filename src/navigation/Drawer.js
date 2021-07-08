@@ -1,4 +1,4 @@
-import { NavItem } from "components";
+import { StyledHashLink } from "components";
 import { useActiveNavItem, useOnClickAway, useWindowHasScrolled } from "hooks";
 import { pages } from "pages";
 import React, { useEffect, useRef } from "react";
@@ -49,7 +49,7 @@ const Drawer = () => {
             active={activeItem === page.id}
             onClick={closeDrawerWithDelay}
           >
-            <NavItem to={page.id}>{page.copy}</NavItem>
+            <StyledHashLink to={page.id}>{page.copy}</StyledHashLink>
           </ListItem>
         );
       })}

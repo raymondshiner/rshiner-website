@@ -7,7 +7,7 @@ const scrollWithOffset = (el) => {
   window.scrollTo({ top: yCoordinate + yOffset, behavior: "smooth" });
 };
 
-const NavItem = styled(HashLink).attrs((props) => ({
+const StyledHashLink = styled(HashLink).attrs((props) => ({
   smooth: true,
   scroll: scrollWithOffset,
   to: `#${props.to}`,
@@ -20,4 +20,4 @@ const NavItem = styled(HashLink).attrs((props) => ({
   font-weight: 500;
 `;
 
-export default NavItem;
+export default StyledHashLink;

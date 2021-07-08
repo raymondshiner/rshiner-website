@@ -1,4 +1,4 @@
-import { NavItem } from "components";
+import { StyledHashLink } from "components";
 import { useActiveNavItem } from "hooks";
 import { pages } from "pages";
 import React from "react";
@@ -39,7 +39,7 @@ const NavMenu = () => {
       {pages.map((page) => {
         return (
           <ListItem key={`nav-${page.id}`} active={activeItem === page.id}>
-            <NavItem to={page.id}>{page.copy}</NavItem>
+            <StyledHashLink to={page.id}>{page.copy}</StyledHashLink>
           </ListItem>
         );
       })}

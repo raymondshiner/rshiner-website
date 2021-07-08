@@ -1,4 +1,4 @@
-import { NavItem } from "components";
+import { StyledHashLink } from "components";
 import styled from "styled-components";
 
 const Logo = () => {
@@ -13,7 +13,7 @@ const Logo = () => {
 
 export default Logo;
 
-const LogoNav = styled(NavItem).attrs((props) => ({
+const LogoNav = styled(StyledHashLink).attrs((props) => ({
   scroll: null,
   to: "#top",
 }))`
