@@ -38,7 +38,7 @@ const AboutMeWrapper = styled.div`
   min-height: 700px;
   width: 100%;
   min-width: 330px;
-  max-width: 1300px;
+  max-width: 1100px;
 `;
 
 const TextWrapper = styled.div`
