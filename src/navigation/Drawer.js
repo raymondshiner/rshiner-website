@@ -89,4 +89,14 @@ const ListItem = styled.li`
 
   border-right: ${(props) =>
     props.active && `2px solid ${props.theme.primary}`};
+
+  transition: all 0.3s;
+
+  :hover {
+    transform: translateY(-3px);
+  }
+  :active {
+    transition: none;
+    transform: translateY(1px);
+  }
 `;

@@ -24,6 +24,7 @@ const HeroWrapper = styled.div`
   position: relative;
   height: 100vh;
   width: 100%;
+  min-height: 700px;
 `;
 
 const StyledParticles = styled(Particles)`
@@ -44,6 +45,10 @@ const FlexBoxColumn = styled.div`
   justify-content: center;
   align-items: center;
   display: flex;
+  transition: ease 0.25s;
+  @media (max-height: 730px) {
+    margin-top: 30px;
+  }
 `;
 
 const MainText = styled.h1`
@@ -54,7 +59,4 @@ const MainText = styled.h1`
   padding: 20px;
   border: ${(props) => `5px solid ${props.theme.primary}`};
   margin-top: 20px;
-  @media (max-height: 750px) and (min-width: 800px) {
-    margin-top: 80px;
-  }
 `;
