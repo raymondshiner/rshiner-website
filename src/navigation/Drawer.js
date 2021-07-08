@@ -1,6 +1,6 @@
 import { NavItem } from "components";
 import { useActiveNavItem, useOnClickAway, useWindowHasScrolled } from "hooks";
-import { meta as pagesMeta } from "pages";
+import { pages } from "pages";
 import React, { useEffect, useRef } from "react";
 import { useDrawerState } from "state";
 import styled from "styled-components";
@@ -42,7 +42,7 @@ const Drawer = () => {
 
   return (
     <StyledDrawer open={drawerOpen} sticky={windowHasScrolled} ref={drawerRef}>
-      {pagesMeta.map((page) => {
+      {pages.map((page) => {
         return (
           <ListItem
             key={page.id}
@@ -89,4 +89,14 @@ const ListItem = styled.li`
 
   border-right: ${(props) =>
     props.active && `2px solid ${props.theme.primary}`};
+
+  transition: all 0.3s;
+
+  :hover {
+    transform: translateY(-3px);
+  }
+  :active {
+    transition: none;
+    transform: translateY(1px);
+  }
 `;

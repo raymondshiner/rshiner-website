@@ -30,6 +30,6 @@ const Header = styled.header`
   justify-content: space-between;
   align-items: center;
   transition: all ease 0.4s;
-  box-shadow: ${(props) => props.sticky && "0px 2px 5px 0px black"};
+  box-shadow: ${(props) => props.sticky && "0px 2px 10px 0px black"};
   z-index: 6;
 `;

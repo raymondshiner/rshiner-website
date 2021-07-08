@@ -1,5 +1,5 @@
 import { Drawer, TopBar } from "navigation";
-import { meta as pagesMeta } from "pages";
+import { pages } from "pages";
 import React from "react";
 import styled, { ThemeProvider } from "styled-components";
 
@@ -15,7 +15,7 @@ const Main = () => {
     <ThemeProvider theme={theme}>
       <TopBar />
       <Drawer />
-      {pagesMeta.map((page, index) => (
+      {pages.map((page, index) => (
         <Section
           id={page.id}
           key={`section-${page.id}`}
@@ -31,10 +31,10 @@ const Main = () => {
 export default Main;
 
 const Section = styled.section`
-  padding: 40px;
-  height: 100vh;
-  min-height: 650px;
   background-color: ${(props) => props.color};
   color: white;
+  min-height: 500px;
   z-index: 1;
+  display: flex;
+  justify-content: center;
 `;

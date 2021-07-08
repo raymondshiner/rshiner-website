@@ -1,6 +1,6 @@
 import { NavItem } from "components";
 import { useActiveNavItem } from "hooks";
-import { meta as pagesMeta } from "pages";
+import { pages } from "pages";
 import React from "react";
 import styled from "styled-components";
 
@@ -14,12 +14,21 @@ const NavList = styled.ul`
 const ListItem = styled.li`
   min-width: fit-content;
   list-style: none;
-  margin: 0 18px;
-  transition: linear 0.25s;
+  margin: 0 14px;
+  padding: 2px 4px;
+  transition: ease 0.3s;
 
   padding-bottom: ${(props) => props.active && "5px"};
   border-bottom: ${(props) =>
     props.active && `2px solid ${props.theme.primary}`};
+
+  :hover {
+    transform: translateY(-3px);
+  }
+  :active {
+    transition: none;
+    transform: translateY(1px);
+  }
 `;
 
 const NavMenu = () => {
@@ -27,7 +36,7 @@ const NavMenu = () => {
 
   return (
     <NavList>
-      {pagesMeta.map((page) => {
+      {pages.map((page) => {
         return (
           <ListItem key={`nav-${page.id}`} active={activeItem === page.id}>
             <NavItem to={page.id}>{page.copy}</NavItem>
@@ -39,3 +48,5 @@ const NavMenu = () => {
 };
 
 export default NavMenu;
+
+// saving this for later transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1) 0s;
