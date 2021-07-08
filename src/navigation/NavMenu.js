@@ -14,9 +14,9 @@ const NavList = styled.ul`
 const ListItem = styled.li`
   min-width: fit-content;
   list-style: none;
-  margin: 0 18px;
-  transition: linear 0.25s;
-  background-color: ${(props) => (props.sticky ? "" : "black")};
+  margin: 0 14px;
+  padding: 2px 4px;
+  transition: ease 0.3s;
 
   padding-bottom: ${(props) => props.active && "5px"};
   border-bottom: ${(props) =>
@@ -31,18 +31,14 @@ const ListItem = styled.li`
   }
 `;
 
-const NavMenu = ({ sticky }) => {
+const NavMenu = () => {
   const activeItem = useActiveNavItem();
 
   return (
     <NavList>
       {pages.map((page) => {
         return (
-          <ListItem
-            key={`nav-${page.id}`}
-            active={activeItem === page.id}
-            sticky={sticky}
-          >
+          <ListItem key={`nav-${page.id}`} active={activeItem === page.id}>
             <NavItem to={page.id}>{page.copy}</NavItem>
           </ListItem>
         );
@@ -52,3 +48,5 @@ const NavMenu = ({ sticky }) => {
 };
 
 export default NavMenu;
+
+// saving this for later transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1) 0s;

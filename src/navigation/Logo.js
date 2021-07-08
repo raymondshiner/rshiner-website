@@ -20,7 +20,6 @@ const LogoNav = styled(NavItem).attrs((props) => ({
   position: relative;
   font-weight: 700;
   font-size: 1.55rem;
-  background-color: ${(props) => (props.sticky ? "" : "black")};
   letter-spacing: 5px;
   width: 50px;
   margin-right: 50px;
