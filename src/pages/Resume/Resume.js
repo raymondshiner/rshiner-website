@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled, { css } from "styled-components";
 import Education from "./Education";
 import Experience from "./Experience/Experience";
-import Skills from "./Skills";
+import Skills from "./Skills/Skills";
 
 const tabs = {
   experience: <Experience />,
