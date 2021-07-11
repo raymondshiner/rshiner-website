@@ -2,10 +2,12 @@ import React from "react";
 import styled from "styled-components";
 
 const WorkHistory = ({ title, location, time, duties, technologies }) => {
-  const headerText = `${title} @ ${location}`;
   return (
     <Wrapper>
-      <h1>{headerText}</h1>
+      <Header>
+        {title}
+        <Location> @ {location}</Location>
+      </Header>
       <SubTitle>{time}</SubTitle>
       <List>
         {duties.map((duty, index) => {
@@ -81,11 +83,26 @@ export const workHistory = {
 };
 
 const Wrapper = styled.div`
-  padding: 15px 30px;
+  margin: 0px 15px;
+  max-width: 550px;
 `;
 
+const Location = styled.div`
+  font-size: 18px;
+  color: ${(props) => props.theme.secondaryText};
+  display: inline;
+`;
+
+const Header = styled.h1`
+margin-bottom10px`;
+
 const SubTitle = styled.h3`
-  margin: 10px 0px;
+  margin-top: 25px;
+  margin-bottom: 10px;
+
+  border-bottom: ${(props) => `1px solid ${props.theme.primary}`};
+  width: fit-content;
+  padding-bottom: 2px;
 `;
 
 const List = styled.ul`

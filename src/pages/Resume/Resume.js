@@ -35,11 +35,12 @@ export default Resume;
 
 const ResumeWrapper = styled.div`
   padding-top: 40px;
+  padding-bottom: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
-  max-width: 800px;
+  max-width: 1000px;
 `;
 
 const ButtonWrapper = styled.div`
@@ -76,10 +77,8 @@ const Button = styled.div`
 `;
 
 const ComponentWrapper = styled.div`
-  margin-top: 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-left: 40px;
-  margin-right: 40px;
+  padding: 20px;
 `;
