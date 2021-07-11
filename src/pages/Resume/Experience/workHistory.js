@@ -94,12 +94,10 @@ const Location = styled.div`
 `;
 
 const Header = styled.h1`
-margin-bottom10px`;
+  margin-bottom: 10px;
+`;
 
 const SubTitle = styled.h3`
-  margin-top: 25px;
-  margin-bottom: 10px;
-
   border-bottom: ${(props) => `1px solid ${props.theme.primary}`};
   width: fit-content;
   padding-bottom: 2px;
@@ -107,6 +105,8 @@ const SubTitle = styled.h3`
 
 const List = styled.ul`
   margin-left: 25px;
+  margin-top: 20px;
+  margin-bottom: 20px;
   color: ${(props) => props.theme.secondaryText};
 `;
 
@@ -117,6 +117,7 @@ const ListItem = styled.li`
 const TechnologiesList = styled.div`
   display: flex;
   flex-wrap: wrap;
+  margin-top: 10px;
 `;
 
 const Technology = styled.div`
