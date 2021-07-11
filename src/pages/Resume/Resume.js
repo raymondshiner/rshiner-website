@@ -46,6 +46,7 @@ const ResumeWrapper = styled.div`
 const ButtonWrapper = styled.div`
   display: flex;
   width: 40%;
+  margin: 0px 20px;
   justify-content: space-evenly;
 `;
 
@@ -56,8 +57,13 @@ const Button = styled.div`
   border-radius: 20px;
   border: ${(props) => `2px solid ${props.theme.primary}`};
   font-weight: 500;
-  transition: background ease 0.5s, color ease 0.5s, transform ease 0.3s;
+  transition: background ease 0.5s, color ease 0.5s, transform ease 0.3s,
+    font-size ease 0.3s;
   cursor: pointer;
+
+  @media (max-width: 350px) {
+    font-size: 12px;
+  }
 
   :hover {
     transform: translateY(-3px);
@@ -81,4 +87,5 @@ const ComponentWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   padding: 20px;
+  max-width: 100%;
 `;

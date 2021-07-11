@@ -50,7 +50,7 @@ const TabsList = styled.div`
 `;
 
 const TabWrapper = styled.div`
-  padding: 8px;
+  padding: 8px 2px;
 `;
 
 const Tab = styled.div`
@@ -63,6 +63,10 @@ const Tab = styled.div`
     props.active ? props.theme.backgroundHighlight : ""};
   border-radius: 5px;
   font-family: "Courier New", Courier, monospace;
+
+  @media (max-width: 350px) {
+    font-size: 14px;
+  }
 
   :hover {
     color: ${(props) => props.theme.primary};
