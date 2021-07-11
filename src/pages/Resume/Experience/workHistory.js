@@ -12,6 +12,7 @@ const WorkHistory = ({ title, location, time, duties, technologies }) => {
           return <ListItem key={index}>{duty}</ListItem>;
         })}
       </List>
+      <div>{technologies}</div>
     </>
   );
 };
@@ -69,9 +70,9 @@ const generateJob = (header, component) => ({
 });
 
 export const workHistory = {
-  stc: generateJob("StorageCraft", StorageCraft),
-  tect: generateJob("IntelliTect", IntelliTect),
-  ewu: generateJob("Eastern WA University", EasternWA),
+  stc: generateJob("StorageCraft", <StorageCraft />),
+  tect: generateJob("IntelliTect", <IntelliTect />),
+  ewu: generateJob("Eastern WA University", <EasternWA />),
 };
 
 const Header = styled.h1``;

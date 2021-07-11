@@ -32,6 +32,7 @@ export default Experience;
 const TabsList = styled.div`
   display: flex;
   width: 90vw;
+  padding: 10px;
   overflow-x: auto;
   ::-webkit-scrollbar {
     display: inline;
@@ -48,7 +49,11 @@ const Tab = styled.div`
   white-space: nowrap;
   cursor: pointer;
   transition: all ease 0.5s;
-  color: ${(props) => (props.active ? "white" : props.theme.secondaryText)};
+  color: ${(props) =>
+    props.active ? props.theme.primary : props.theme.secondaryText};
+  background-color: ${(props) =>
+    props.active ? props.theme.backgroundHighlight : ""};
+  border-radius: 5px;
   font-family: "Courier New", Courier, monospace;
 
   :hover {
@@ -75,5 +80,5 @@ const TabBottom = styled.div`
 `;
 
 const JobWrapper = styled.div`
-  padding: 20px;
+  padding: 0px 30px;
 `;
