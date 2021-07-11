@@ -22,7 +22,7 @@ const Experience = () => {
           );
         })}
       </TabsList>
-      <JobWrapper>{workHistory[activeJob].component}</JobWrapper>
+      {workHistory[activeJob].component}
     </>
   );
 };
@@ -31,17 +31,33 @@ export default Experience;
 
 const TabsList = styled.div`
   display: flex;
-  width: 90vw;
-  padding: 10px;
-  overflow-x: auto;
   ::-webkit-scrollbar {
     display: inline;
   }
+  width: fit-content;
+  max-width: 90vw;
+
   ${(props) => props.theme.fadeIn}
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  ::-webkit-scrollbar {
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    height: 3px;
+    border-radius: 25px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border-radius: 0;
+    background-color: #282828;
+  }
 `;
 
 const TabWrapper = styled.div`
-  padding: 5px;
+  padding: 8px;
 `;
 
 const Tab = styled.div`
@@ -49,8 +65,7 @@ const Tab = styled.div`
   white-space: nowrap;
   cursor: pointer;
   transition: all ease 0.5s;
-  color: ${(props) =>
-    props.active ? props.theme.primary : props.theme.secondaryText};
+  color: ${(props) => (props.active ? "white" : props.theme.secondaryText)};
   background-color: ${(props) =>
     props.active ? props.theme.backgroundHighlight : ""};
   border-radius: 5px;
@@ -77,8 +92,4 @@ const TabBottom = styled.div`
       background-color: ${(props) => props.theme.primary};
       width: 100%;
     `}
-`;
-
-const JobWrapper = styled.div`
-  padding: 0px 30px;
 `;

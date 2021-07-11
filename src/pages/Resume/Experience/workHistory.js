@@ -4,16 +4,21 @@ import styled from "styled-components";
 const WorkHistory = ({ title, location, time, duties, technologies }) => {
   const headerText = `${title} @ ${location}`;
   return (
-    <>
-      <Header>{headerText}</Header>
+    <Wrapper>
+      <h1>{headerText}</h1>
       <SubTitle>{time}</SubTitle>
       <List>
         {duties.map((duty, index) => {
           return <ListItem key={index}>{duty}</ListItem>;
         })}
       </List>
-      <div>{technologies}</div>
-    </>
+      <SubTitle>Technologies Used</SubTitle>
+      <TechnologiesList>
+        {technologies.map((tech) => (
+          <Technology key={tech}>{tech}</Technology>
+        ))}
+      </TechnologiesList>
+    </Wrapper>
   );
 };
 
@@ -23,8 +28,8 @@ const StorageCraft = () => (
     location="StorageCraft Technologies"
     time="Jan 2020 - Current"
     duties={[
-      "Designed and implemented UI software for SaaS Cloud Bacakup Services (Onedrive, GCP, etc)",
-      "Lead Frontend Developer on green develop",
+      "Designed and implemented UI software for SaaS Cloud Bacakup Services (Onedrive, GCP, etc). Dealt with managing and browsing upwards of 100,000 items at a time",
+      "Lead Frontend Developer on green development project. Responsible for managing direction, tooling, design, and testing of the product",
     ]}
     technologies={[
       "React",
@@ -75,10 +80,32 @@ export const workHistory = {
   ewu: generateJob("Eastern WA University", <EasternWA />),
 };
 
-const Header = styled.h1``;
+const Wrapper = styled.div`
+  padding: 15px 30px;
+`;
 
-const SubTitle = styled.h3``;
+const SubTitle = styled.h3`
+  margin: 10px 0px;
+`;
 
-const List = styled.ul``;
+const List = styled.ul`
+  margin-left: 25px;
+  color: ${(props) => props.theme.secondaryText};
+`;
 
-const ListItem = styled.li``;
+const ListItem = styled.li`
+  margin: 15px 0px;
+`;
+
+const TechnologiesList = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+`;
+
+const Technology = styled.div`
+  margin: 3px;
+  background-color: ${(props) => props.theme.backgroundHighlight};
+  padding: 8px;
+  border-radius: 15px;
+  white-space: nowrap;
+`;
