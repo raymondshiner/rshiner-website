@@ -40,7 +40,6 @@ const ResumeWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   width: 100%;
-  max-width: 1000px;
 `;
 
 const ButtonWrapper = styled.div`
