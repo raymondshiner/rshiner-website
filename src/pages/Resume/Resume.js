@@ -44,7 +44,7 @@ const ResumeWrapper = styled.div`
 
 const ButtonWrapper = styled.div`
   display: flex;
-  width: 40%;
+  width: 30%;
   margin: 0px 20px;
   justify-content: space-evenly;
 `;

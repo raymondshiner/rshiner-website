@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import SkillList from "./SkillList";
 
 const Skills = () => {
   const [searchValue, setSearchValue] = useState();
@@ -52,7 +53,7 @@ const Skills = () => {
   );
 
   return (
-    <>
+    <SkillsWrapper>
       <SearchBar
         type="text"
         value={searchValue}
@@ -67,15 +68,26 @@ const Skills = () => {
         <SubText>Skill Type:</SubText>
         <TypeFilters />
       </FilterWrapper>
-    </>
+      <SkillList />
+    </SkillsWrapper>
   );
 };
 
 export default Skills;
 
+const SkillsWrapper = styled.div`
+  width: fit-content;
+  max-width: 1100px;
+  ${(props) => props.theme.fadeIn}
+  margin: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
 const FilterWrapper = styled.div`
   display: flex;
-  width: 100%;
+  width: fit-content;
   margin: 5px 0px;
 `;
 
@@ -96,7 +108,7 @@ const FilterButtonWrapper = styled.div`
 const SearchBar = styled.input`
   color: white;
   background-color: ${(props) => props.theme.dark};
-  width: 100%;
+  width: 50%;
   border: none;
   padding: 12px 16px;
   border-radius: 20px;
@@ -114,7 +126,7 @@ const FilterButton = styled.i`
   letter-spacing: 1px;
   font-size: 15px;
   padding: 5px;
-  margin: 0px 8px;
+  margin: 2px 8px;
   cursor: pointer;
   border-radius: 8px;
   transition: all ease 0.4s;
