@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import { skills } from "./skillData";
 import SkillList from "./SkillList";
 
 const Skills = () => {
@@ -68,7 +69,7 @@ const Skills = () => {
         <SubText>Skill Type:</SubText>
         <TypeFilters />
       </FilterWrapper>
-      <SkillList />
+      <SkillList skills={skills} />
     </SkillsWrapper>
   );
 };
@@ -79,7 +80,7 @@ const SkillsWrapper = styled.div`
   width: fit-content;
   max-width: 1100px;
   ${(props) => props.theme.fadeIn}
-  margin: 0px;
+  margin: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -109,6 +110,7 @@ const SearchBar = styled.input`
   color: white;
   background-color: ${(props) => props.theme.dark};
   width: 50%;
+  min-width: 300px;
   border: none;
   padding: 12px 16px;
   border-radius: 20px;
