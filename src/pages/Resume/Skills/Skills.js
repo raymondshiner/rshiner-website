@@ -113,7 +113,7 @@ const FilterButtonWrapper = styled.div`
 const SearchBar = styled.input`
   color: white;
   background-color: ${(props) => props.theme.dark};
-  width: 50%;
+  width: 30vw;
   min-width: 300px;
   border: none;
   padding: 12px 16px;
