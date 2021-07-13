@@ -1,43 +1,35 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { skills } from "./skillData";
+import SkillLevelInfo from "./SkillLevelInfo";
 import SkillList from "./SkillList";
 
 const Skills = () => {
   const [searchValue, setSearchValue] = useState();
   const [activeSkillLevel, setActiveSkillLevel] = useState("");
-  const [activeSkillTypes, setActiveSkillTypes] = useState({});
 
   const handleSearchChange = (e) => setSearchValue(e.target.value);
-
-  const toggleActiveSkillTypes = (skill) => {
-    setActiveSkillTypes({
-      ...activeSkillTypes,
-      [skill]: !activeSkillTypes[skill],
-    });
-  };
 
   const toggleActiveSkillLevel = (skillLevel) => {
     if (activeSkillLevel === skillLevel) setActiveSkillLevel("");
     else setActiveSkillLevel(skillLevel);
   };
 
-  const skillTypes = ["frontend", "backend", "dev ops"];
-  const skillLevels = ["familiar", "novice", "proficient", "expert", "master"];
+  const skillLevels = [
+    "familiar",
+    "novice",
+    "proficient",
+    "specialized",
+    "expert",
+  ];
 
-  const TypeFilters = () => (
-    <FilterButtonWrapper>
-      {skillTypes.map((skill) => (
-        <FilterButton
-          key={skill}
-          active={activeSkillTypes[skill]}
-          onClick={() => toggleActiveSkillTypes(skill)}
-        >
-          {skill}
-        </FilterButton>
-      ))}
-    </FilterButtonWrapper>
-  );
+  const skillLevelsLegend = {
+    familiar: 1,
+    novice: 2,
+    proficient: 3,
+    specialized: 4,
+    expert: 5,
+  };
 
   const SkillLevelFilter = () => (
     <FilterButtonWrapper>
@@ -53,6 +45,18 @@ const Skills = () => {
     </FilterButtonWrapper>
   );
 
+  const skillsFilteredByLevel = activeSkillLevel
+    ? skills.filter((skill) => {
+        return skill.level === skillLevelsLegend[activeSkillLevel];
+      })
+    : skills;
+
+  const filteredBySearch = searchValue
+    ? skillsFilteredByLevel.filter((skill) => {
+        return skill.name.toLowerCase().includes(searchValue.toLowerCase());
+      })
+    : skillsFilteredByLevel;
+
   return (
     <SkillsWrapper>
       <SearchBar
@@ -62,14 +66,12 @@ const Skills = () => {
         onChange={handleSearchChange}
       />
       <FilterWrapper>
-        <SubText>Skill Level:</SubText>
+        <SubText>
+          <SkillLevelInfo /> Skill Level:
+        </SubText>
         <SkillLevelFilter />
       </FilterWrapper>
-      <FilterWrapper>
-        <SubText>Skill Type:</SubText>
-        <TypeFilters />
-      </FilterWrapper>
-      <SkillList skills={skills} />
+      <SkillList skills={filteredBySearch} />
     </SkillsWrapper>
   );
 };
@@ -88,11 +90,13 @@ const SkillsWrapper = styled.div`
 
 const FilterWrapper = styled.div`
   display: flex;
-  width: fit-content;
-  margin: 5px 0px;
+  margin: 10px;
+  max-height: 100px;
 `;
 
 const SubText = styled.div`
+  display: flex;
+  align-items: center;
   padding: 5px;
   color: ${(props) => props.theme.secondaryText};
   flex: 1;
