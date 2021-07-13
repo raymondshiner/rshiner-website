@@ -1,9 +1,18 @@
 import infoIcon from "assets/infoIcon.svg";
-import React from "react";
+import { Modal } from "components";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 const SkillLevelInfo = () => {
-  return <InfoIcon />;
+  const [showModal, setShowModal] = useState(false);
+  return (
+    <>
+      <InfoIcon onClick={() => setShowModal(true)} />
+      <Modal open={showModal} onClose={() => setShowModal(false)}>
+        Fancy Modal
+      </Modal>
+    </>
+  );
 };
 
 export default SkillLevelInfo;
