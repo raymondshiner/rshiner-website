@@ -53,7 +53,9 @@ const Skills = () => {
 
   const filteredBySearch = searchValue
     ? skillsFilteredByLevel.filter((skill) => {
-        return skill.name.toLowerCase().includes(searchValue.toLowerCase());
+        return skill.name
+          .toLowerCase()
+          .includes(searchValue.toLowerCase().trim());
       })
     : skillsFilteredByLevel;
 
