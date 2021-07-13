@@ -17,13 +17,28 @@ const Modal = ({ open, onClose, children }) => {
     <>
       <ModalBackground />
       <ModalContent>
-        <button onClick={onClose}>CLOSE MODAL</button>
+        <CloseIcon onClick={onClose} />
+
         {children}
       </ModalContent>
     </>,
     document.getElementById("portal")
   );
 };
+
+<img
+  src="https://img.icons8.com/ios-filled/35//close-window.png"
+  alt="close"
+/>;
+
+const CloseIcon = styled.img.attrs((props) => ({
+  src: `https://img.icons8.com/ios-filled/35/606060/close-window.png`,
+  alt: "close",
+}))`
+  margin-left: auto;
+  margin-bottom: 8px;
+  cursor: pointer;
+`;
 
 export default Modal;
 
@@ -39,13 +54,17 @@ const quickFade = css`
 
 const ModalContent = styled.div`
   position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   min-width: 300px;
-  background-color: ${(props) => props.theme.backgroundHighlight};
-  padding: 50px;
-  border-radius: 25px;
+  color: white;
+  background-color: ${(props) => props.theme.dark};
+  padding: 30px;
+  border-radius: 15px;
   z-index: 1000;
   ${quickFade}
 `;
