@@ -18,8 +18,7 @@ const Modal = ({ open, onClose, children }) => {
       <ModalBackground />
       <ModalContent>
         <CloseIcon onClick={onClose} />
-
-        {children}
+        <ScrollWrapper>{children}</ScrollWrapper>
       </ModalContent>
     </>,
     document.getElementById("portal")
@@ -67,6 +66,12 @@ const ModalContent = styled.div`
   border-radius: 15px;
   z-index: 1000;
   ${quickFade}
+`;
+
+const ScrollWrapper = styled.div`
+  max-height: 80vh;
+  overflow-y: auto;
+  padding: 5px;
 `;
 
 const ModalBackground = styled.div`
