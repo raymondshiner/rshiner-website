@@ -37,7 +37,6 @@ const AboutMeWrapper = styled.div`
   padding: 50px;
   min-height: 700px;
   width: 100%;
-  min-width: 330px;
   max-width: 1100px;
 `;
 
@@ -63,7 +62,7 @@ const Description = styled.p`
   font-weight: 300;
   line-height: 30px;
   font-size: clamp(0.8rem, 5vw, 1.3rem);
-  color: #dddddddd;
+  color: ${(props) => props.theme.secondaryText};
   margin: 8px 0;
 `;
 
