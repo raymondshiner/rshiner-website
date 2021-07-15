@@ -20,6 +20,7 @@ const InputContainer = styled.div`
   padding: 0px 5px;
   align-items: center;
   font-size: 14px;
+  color: ${(props) => props.theme.secondaryText};
 `;
 
 const TextBox = styled.textarea.attrs({
@@ -30,6 +31,7 @@ const TextBox = styled.textarea.attrs({
   width: inherit;
   caret-color: ${(props) => props.theme.secondaryText};
   padding-left: 10px;
+  resize: none;
   padding-top: 15px;
   border-radius: 4px;
   border-style: solid;
@@ -57,7 +59,6 @@ const TextBox = styled.textarea.attrs({
     top: 0px;
     left: 10px;
     font-size: 12px;
-    color: ${(props) => props.theme.secondaryText};
     padding: 5px;
     padding-top: 2px;
   }
@@ -74,7 +75,6 @@ const TextBox = styled.textarea.attrs({
     top: 0px;
     left: 10px;
     font-size: 12px;
-    color: ${(props) => props.theme.secondaryText};
     border-radius: 15px;
     padding: 5px;
     padding-top: 2px;
@@ -88,6 +88,5 @@ const Label = styled.label.attrs({
   pointer-events: none;
   left: 20px;
   top: 37px;
-  color: #808080;
   transition: all ease 0.5s;
 `;

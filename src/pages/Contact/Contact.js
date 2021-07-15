@@ -33,7 +33,7 @@ const Contact = () => {
         onChange={(e) => setSubject(e.target.value)}
       />
       <TextBoxInput
-        label="Your mesage"
+        label="Your message"
         onChange={(e) => setMessage(e.target.value)}
         disabled={!true}
       />
@@ -43,18 +43,6 @@ const Contact = () => {
 };
 
 export default Contact;
-
-const ContactWrapper = styled.div`
-  background: black;
-  margin: 50px;
-  padding: 40px;
-  width: 100%;
-  max-width: 500px;
-  border-radius: 50px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
 
 const Title = styled.h1`
   color: ${(props) => props.theme.primary};
@@ -102,6 +90,9 @@ const SubmitButton = styled.input.attrs({
 
   :disabled {
     background-color: ${(props) => props.theme.backgroundHighlight};
-    cursor: none;
+    cursor: unset;
+    :hover {
+      transform: translateY(0px);
+    }
   }
 `;
