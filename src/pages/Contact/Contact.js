@@ -1,46 +1,56 @@
-import React, { useState } from "react";
+import emailjs from "emailjs-com";
+import React from "react";
 import Particles from "react-particles-js";
 import styled from "styled-components";
 import Input from "./Input";
 import TextBoxInput from "./TextBoxInput";
 
 const Contact = () => {
-  const [name, setName] = useState("");
-  const [subject, setSubject] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
+  const [emailValue, setEmailValue] = React.useState("");
 
-  const allFormsFilled = name && email && subject && message;
+  const sendEmail = (e) => {
+    e.preventDefault();
 
-  const sendEmail = () => {};
+    emailjs
+      .sendForm(
+        "rshiner_website",
+        "template_rshiner_website",
+        e.target,
+        "user_kgnL7hoNrgbuMFaJ614M0"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+
+    alert(
+      "'Success - Thank you for contacting me! I'll get back to you shortly."
+    );
+
+    setEmailValue("");
+    e.target.reset();
+  };
 
   return (
     <ContactWrapper>
       <StyledParticles />
       <Form onSubmit={sendEmail}>
         <Title>Contact Me</Title>
+        <Input label="Name" name="name" />
         <Input
-          label="Name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
-        <Input
+          value={emailValue}
           label="Email address"
           type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          name="email"
+          onChange={(e) => setEmailValue(e.target.value)}
         />
-        <Input
-          label="Subject"
-          value={subject}
-          onChange={(e) => setSubject(e.target.value)}
-        />
-        <TextBoxInput
-          label="Your message"
-          onChange={(e) => setMessage(e.target.value)}
-          disabled={!true}
-        />
-        <SubmitButton disabled={!allFormsFilled} />
+        <Input label="Subject" name="subject" />
+        <TextBoxInput label="Your message" name="message" />
+        <SubmitButton />
       </Form>
     </ContactWrapper>
   );

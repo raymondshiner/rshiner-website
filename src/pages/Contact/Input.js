@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 const Input = ({ label, ...props }) => {
   return (
@@ -22,10 +22,10 @@ const InputContainer = styled.div`
   color: ${(props) => props.theme.secondaryText};
 `;
 
-const StyledInput = styled.input.attrs({
-  type: "text",
+const StyledInput = styled.input.attrs((props) => ({
+  type: props.type || "text",
   required: true,
-})`
+}))`
   height: 55px;
   width: inherit;
   font-size: 14px;
@@ -42,11 +42,6 @@ const StyledInput = styled.input.attrs({
   :hover {
     /* border-color: ${(props) => props.theme.secondaryText}; */
     border-color: #808080;
-  }
-
-  :focus {
-    padding-left: 9px;
-    border-width: 2px;
     border-color: ${(props) => props.theme.secondaryText};
     outline: none;
   }
@@ -75,6 +70,30 @@ const StyledInput = styled.input.attrs({
     padding: 5px;
     padding-top: 2px;
   }
+
+  ${(props) =>
+    props.type === "email" &&
+    props.value !== "" &&
+    css`
+      :invalid {
+        top: 2px;
+        left: 10px;
+        background-color: ${(props) => props.theme.backgroundHighlight};
+        padding-left: 10px;
+        padding-right: 5px;
+        border-color: red;
+      }
+
+      :invalid + .label {
+        top: 0px;
+        left: 10px;
+        font-size: 12px;
+        border-radius: 15px;
+        padding: 5px;
+        padding-top: 2px;
+        color: red;
+      }
+    `}
 `;
 
 const Label = styled.label.attrs({
