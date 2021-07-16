@@ -58,5 +58,5 @@ const MainText = styled.h1`
   min-width: 300px;
   padding: 20px;
   border: ${(props) => `5px solid ${props.theme.primary}`};
-  margin-top: 20px;
+  margin-top: 10px;
 `;
