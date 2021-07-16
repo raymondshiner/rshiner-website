@@ -1,7 +1,8 @@
 import { Drawer, TopBar } from "navigation";
 import { pages } from "pages";
 import React from "react";
-import styled, { css, ThemeProvider } from "styled-components";
+import { css, ThemeProvider } from "styled-components";
+import Section from "./Section";
 
 const theme = {
   primary: "#2bc5e0",
@@ -39,12 +40,3 @@ const Main = () => {
 };
 
 export default Main;
-
-const Section = styled.section`
-  background-color: ${(props) => props.color};
-  color: white;
-  min-height: 500px;
-  z-index: 1;
-  display: flex;
-  justify-content: center;
-`;

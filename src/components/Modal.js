@@ -1,8 +1,14 @@
-import React, { useEffect } from "react";
+import { useOnClickAway } from "hooks";
+import React, { useEffect, useRef } from "react";
 import ReactDOM from "react-dom";
 import styled, { css } from "styled-components";
 
 const Modal = ({ open, onClose, children }) => {
+  const ref = useRef(null);
+  useOnClickAway(ref, () => {
+    onClose();
+  });
+
   useEffect(() => {
     if (open) {
       document.body.classList.add("modal-open");
@@ -16,7 +22,7 @@ const Modal = ({ open, onClose, children }) => {
   return ReactDOM.createPortal(
     <>
       <ModalBackground />
-      <ModalContent>
+      <ModalContent ref={ref}>
         <CloseIcon onClick={onClose} />
         <ScrollWrapper>{children}</ScrollWrapper>
       </ModalContent>
