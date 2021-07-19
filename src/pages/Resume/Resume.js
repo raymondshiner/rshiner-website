@@ -45,6 +45,7 @@ const ResumeWrapper = styled.div`
 const ButtonWrapper = styled.div`
   display: flex;
   width: 30%;
+  min-width: 310px;
   margin: 0px 20px;
   justify-content: space-evenly;
 `;
@@ -59,8 +60,7 @@ const Button = styled.div`
   transition: background ease 0.5s, color ease 0.5s, transform ease 0.3s,
     font-size ease 0.3s;
   cursor: pointer;
-
-  @media (max-width: 350px) {
+  @media (max-width: 400px) {
     font-size: 12px;
   }
 

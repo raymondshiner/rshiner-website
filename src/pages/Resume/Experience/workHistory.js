@@ -85,6 +85,7 @@ export const workHistory = {
 const Wrapper = styled.div`
   margin: 0px 15px;
   max-width: 550px;
+  width: 80vw;
 `;
 
 const Location = styled.div`
