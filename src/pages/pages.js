@@ -12,7 +12,7 @@ const generatePage = (id, copy, component) => ({
 
 export const pages = [
   generatePage("home", "Home", <Hero />),
-  generatePage("about", "About Me", <AboutMe />),
-  generatePage("cv", "Resume/CV", <Resume />),
+  generatePage("about", "About", <AboutMe />),
+  generatePage("resume", "Resume", <Resume />),
   generatePage("contact", "Contact", <Contact />),
 ];

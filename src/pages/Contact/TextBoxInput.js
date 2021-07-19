@@ -28,7 +28,7 @@ const TextBox = styled.textarea.attrs({
   required: true,
 })`
   height: 200px;
-  width: inherit;
+  width: 100%;
   caret-color: ${(props) => props.theme.secondaryText};
   padding-left: 10px;
   resize: none;
@@ -58,7 +58,6 @@ const TextBox = styled.textarea.attrs({
   :focus + .label {
     top: 0px;
     left: 10px;
-    font-size: 12px;
     padding: 5px;
     padding-top: 2px;
   }
@@ -74,7 +73,6 @@ const TextBox = styled.textarea.attrs({
   :valid + .label {
     top: 0px;
     left: 10px;
-    font-size: 12px;
     border-radius: 15px;
     padding: 5px;
     padding-top: 2px;

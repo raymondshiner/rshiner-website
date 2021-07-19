@@ -15,6 +15,8 @@ const Resume = () => {
 
   return (
     <ResumeWrapper>
+      <Title>My Resume</Title>
+      <Divider />
       <ButtonWrapper>
         {Object.keys(tabs).map((tab) => (
           <Button
@@ -40,6 +42,18 @@ const ResumeWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   width: 100%;
+`;
+
+const Title = styled.h1`
+  font-size: 30pt;
+`;
+
+const Divider = styled.div`
+  height: 5px;
+  width: 50%;
+  border-radius: 50px;
+  background-color: ${(props) => props.theme.backgroundHighlight};
+  margin: 20px;
 `;
 
 const ButtonWrapper = styled.div`
