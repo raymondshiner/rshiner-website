@@ -20,7 +20,7 @@ const Hero = () => {
 export default Hero;
 
 const HeroWrapper = styled.div`
-  padding: 40px;
+  padding: 30px;
   position: relative;
   height: 100vh;
   width: 100%;
@@ -48,6 +48,10 @@ const FlexBoxColumn = styled.div`
   transition: ease 0.25s;
   @media (max-height: 730px) {
     margin-top: 30px;
+  }
+
+  @media (max-width: 400px) {
+    margin-top: 0px;
   }
 `;
 

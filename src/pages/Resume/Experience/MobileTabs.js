@@ -26,7 +26,7 @@ export default MobileTabs;
 const TabsList = styled.div`
   display: flex;
   width: fit-content;
-  max-width: 90vw;
+  max-width: 80vw;
   margin: 10px 0px;
 
   overflow-x: auto;

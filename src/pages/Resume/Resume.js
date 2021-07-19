@@ -15,6 +15,8 @@ const Resume = () => {
 
   return (
     <ResumeWrapper>
+      <Title>My Resume</Title>
+      <Divider />
       <ButtonWrapper>
         {Object.keys(tabs).map((tab) => (
           <Button
@@ -42,9 +44,22 @@ const ResumeWrapper = styled.div`
   width: 100%;
 `;
 
+const Title = styled.h1`
+  font-size: 30pt;
+`;
+
+const Divider = styled.div`
+  height: 5px;
+  width: 50%;
+  border-radius: 50px;
+  background-color: ${(props) => props.theme.backgroundHighlight};
+  margin: 20px;
+`;
+
 const ButtonWrapper = styled.div`
   display: flex;
   width: 30%;
+  min-width: 310px;
   margin: 0px 20px;
   justify-content: space-evenly;
 `;
@@ -59,8 +74,7 @@ const Button = styled.div`
   transition: background ease 0.5s, color ease 0.5s, transform ease 0.3s,
     font-size ease 0.3s;
   cursor: pointer;
-
-  @media (max-width: 350px) {
+  @media (max-width: 400px) {
     font-size: 12px;
   }
 

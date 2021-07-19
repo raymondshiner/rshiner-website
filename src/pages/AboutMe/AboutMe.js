@@ -47,6 +47,11 @@ const TextWrapper = styled.div`
   flex-direction: column;
   justify-content: space-evenly;
   padding-bottom: 0px;
+  max-width: 500px;
+  @media (max-width: 400px) {
+    padding: 0px;
+    margin-top: 20px;
+  }
 `;
 
 const Picture = styled.img.attrs((props) => ({
@@ -71,7 +76,6 @@ const MainText = styled.h1`
   border-bottom: ${(props) => `2px solid ${props.theme.primary}`};
   width: fit-content;
   white-space: nowrap;
-  margin-bottom: 30px;
   @media (max-width: 1100px) {
     margin-bottom: 30px;
     align-self: center;

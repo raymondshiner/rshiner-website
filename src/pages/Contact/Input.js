@@ -27,7 +27,7 @@ const StyledInput = styled.input.attrs((props) => ({
   required: true,
 }))`
   height: 55px;
-  width: inherit;
+  width: 100%;
   font-size: 14px;
   caret-color: ${(props) => props.theme.secondaryText};
   padding-left: 10px;
@@ -49,7 +49,6 @@ const StyledInput = styled.input.attrs((props) => ({
   :focus + .label {
     top: 0px;
     left: 10px;
-    font-size: 12px;
     padding: 5px;
     padding-top: 2px;
   }
@@ -65,7 +64,6 @@ const StyledInput = styled.input.attrs((props) => ({
   :valid + .label {
     top: 0px;
     left: 10px;
-    font-size: 12px;
     border-radius: 15px;
     padding: 5px;
     padding-top: 2px;
