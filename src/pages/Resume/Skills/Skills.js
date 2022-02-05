@@ -1,57 +1,46 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { skills } from "./skillData";
-import SkillLevelInfo from "./SkillLevelInfo";
+import { skillLevelText } from "./skillLevelData";
+import SkillLevelInfoModal from "./SkillLevelInfoModal/SkillLevelInfoModal";
 import SkillList from "./SkillList";
+import { skills } from "./skillsData";
 
 const Skills = () => {
   const [searchValue, setSearchValue] = useState();
-  const [activeSkillLevel, setActiveSkillLevel] = useState("");
+  const [activeSkillLevel, setActiveSkillLevel] = useState(0);
 
   const handleSearchChange = (e) => setSearchValue(e.target.value);
 
   const toggleActiveSkillLevel = (skillLevel) => {
-    if (activeSkillLevel === skillLevel) setActiveSkillLevel("");
+    if (activeSkillLevel === skillLevel) setActiveSkillLevel(0);
     else setActiveSkillLevel(skillLevel);
-  };
-
-  const skillLevels = [
-    "familiar",
-    "novice",
-    "proficient",
-    "specialized",
-    "expert",
-  ];
-
-  const skillLevelsLegend = {
-    familiar: 1,
-    novice: 2,
-    proficient: 3,
-    specialized: 4,
-    expert: 5,
   };
 
   const SkillLevelFilter = () => (
     <FilterButtonWrapper>
-      {skillLevels.map((skillLevel) => (
-        <FilterButton
-          key={skillLevel}
-          active={skillLevel === activeSkillLevel}
-          onClick={() => toggleActiveSkillLevel(skillLevel)}
-        >
-          {skillLevel}
-        </FilterButton>
-      ))}
+      {Object.keys(skillLevelText).map((skillLevelString) => {
+        const skillLevel = Number(skillLevelString);
+
+        return (
+          <FilterButton
+            key={`skill-level-fitler-${skillLevel}`}
+            active={skillLevel === activeSkillLevel}
+            onClick={() => toggleActiveSkillLevel(skillLevel)}
+          >
+            {skillLevel}
+          </FilterButton>
+        );
+      })}
     </FilterButtonWrapper>
   );
 
   const skillsFilteredByLevel = activeSkillLevel
     ? skills.filter((skill) => {
-        return skill.level === skillLevelsLegend[activeSkillLevel];
+        return skill.level === activeSkillLevel;
       })
     : skills;
 
-  const filteredBySearch = searchValue
+  const skillsFilteredBySearchAndLevel = searchValue
     ? skillsFilteredByLevel.filter((skill) => {
         return skill.name
           .toLowerCase()
@@ -69,11 +58,11 @@ const Skills = () => {
       />
       <FilterWrapper>
         <SubText>
-          <SkillLevelInfo /> Skill Level:
+          <SkillLevelInfoModal /> Skill Level:
         </SubText>
         <SkillLevelFilter />
       </FilterWrapper>
-      <SkillList skills={filteredBySearch} />
+      <SkillList skills={skillsFilteredBySearchAndLevel} />
     </SkillsWrapper>
   );
 };

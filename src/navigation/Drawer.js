@@ -1,9 +1,9 @@
-import { NavItem } from "components";
 import { useActiveNavItem, useOnClickAway, useWindowHasScrolled } from "hooks";
 import { pages } from "pages";
 import React, { useEffect, useRef } from "react";
 import { useDrawerState } from "state";
 import styled from "styled-components";
+import NavItem from "./components/NavItem";
 
 const Drawer = () => {
   const drawerRef = useRef(null);

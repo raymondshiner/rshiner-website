@@ -1,7 +1,7 @@
 import React from "react";
 import Particles from "react-particles-js";
 import styled from "styled-components";
-import SocialLinks from "./SocialLinks";
+import SocialLinks from "./SocialLinks/SocialLinks";
 import TerminalAnimation from "./TerminalAnimation";
 
 const Hero = () => {

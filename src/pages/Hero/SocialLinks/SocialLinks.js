@@ -1,7 +1,7 @@
-import { GithubLogo, LinkedInLogo } from "assets";
-import { ExternalLink } from "components";
 import React from "react";
 import styled from "styled-components";
+import githubLogo from "./githubLogo.svg";
+import linkedInLogo from "./linkedInLogo.svg";
 
 const SocialLinks = () => (
   <IconWrapper>
@@ -26,3 +26,25 @@ const IconWrapper = styled.div`
   border-radius: 50px;
   background-color: ${(props) => props.theme.dark};
 `;
+
+const Icon = styled.img`
+  height: 5vw;
+  min-height: 50px;
+  max-height: 70px;
+  transition: ease 0.3s;
+  :hover {
+    transform: translateY(-3px);
+  }
+`;
+
+export const LinkedInLogo = () => <Icon src={linkedInLogo} alt="linked in" />;
+
+export const GithubLogo = () => {
+  return <Icon src={githubLogo} alt="github" />;
+};
+
+const ExternalLink = styled.a.attrs((props) => ({
+  href: props.url,
+  target: "_blank",
+  rel: "noopener noreferrer",
+}))``;
