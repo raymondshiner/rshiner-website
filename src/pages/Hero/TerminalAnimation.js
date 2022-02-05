@@ -11,9 +11,10 @@ const TerminalAnimation = () => (
     <TypeWriter
       strings={[
         "React Developer",
-        "JavaScript Developer",
-        "Technical Writer",
+        "Team Lead",
+        "Clean Code Specialist",
         "Unit Tester",
+        "Technical Writer",
       ]}
       typeSpeed={70}
       backSpeed={30}
