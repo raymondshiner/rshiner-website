@@ -4,10 +4,9 @@ import styled from "styled-components";
 import DesktopTabs from "./DesktopTabs";
 import MobileTabs from "./MobileTabs";
 import { workHistory } from "./workHistory";
-// import { jobs } from "./jobs";
 
 const Experience = () => {
-  const [activeJob, setActiveJob] = useState("stc");
+  const [activeJob, setActiveJob] = useState("mep");
   const { width } = useWindowDimensions();
 
   const onJobSelected = (job) => {

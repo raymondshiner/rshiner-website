@@ -9,8 +9,8 @@ const AboutMe = () => {
       <TextWrapper>
         <MainText>About Me</MainText>
         <Description>
-          I'm a Web Developer based in Kirkland, WA. I specialize in Functional
-          React, Unit Testing, and Technical Writing.
+          I'm a Web Developer based in Spokane, WA. I specialize in Functional
+          React, Codebase Management, Unit Testing, and Technical Writing.
         </Description>
         <Description>
           I'm a Christian, a husband, a father to two children, and a total
