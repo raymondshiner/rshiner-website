@@ -7,6 +7,9 @@ const generateSkill = (name, level, ...types) => ({
 export const skills = [
   generateSkill("React", 4, "frontend"),
   generateSkill("React Hooks", 4, "frontend"),
+  generateSkill("Communication", 5, "general"),
+  generateSkill("Management", 4, "general"),
+  generateSkill("Clean Code", 5, "frontend", "backend"),
   generateSkill("JavaScript", 3, "frontend", "backend"),
   generateSkill("Jest", 5, "frontend"),
   generateSkill("Enzyme", 4, "frontend"),

@@ -24,23 +24,48 @@ const WorkHistory = ({ title, location, time, duties, technologies }) => {
   );
 };
 
-const StorageCraft = () => (
+const EvolveMEP = () => (
   <WorkHistory
-    title="React Developer"
-    location="StorageCraft Technologies"
-    time="Jan 2020 - Current"
+    title="Senior React Engineer / Team Lead"
+    location="EvolveMEP"
+    time="Sept 2021 - Current"
     duties={[
-      "Designed and implemented UI software for SaaS Cloud Bacakup Services (Onedrive, GCP, etc). Dealt with managing and browsing upwards of 100,000 items at a time",
-      "Lead Frontend Developer on green development project. Responsible for managing direction, tooling, design, and testing of the product",
+      "Working as a Team Leader on a green project managing 4+ developers as well as the functional JS React code base for our team, in addition to developing new features for our application.",
+      "Responsible for defining, teaching, and enforcing clean code and testing standards across our code base to ensure product maintainability.",
+      "Regularly involved in the architecture and product design of our application, as well as training new hires, and handling our teams' processes documentation.",
+      "Fully remote position",
     ]}
     technologies={[
       "React",
       "React Hooks",
-      "Apollo Server/Client",
+      "Apollo Client v3",
+      "AWS Appsync",
+      "GraphQL",
+      "Cypress",
+      "Rest",
+      "Material UI v5",
+    ]}
+  />
+);
+
+const StorageCraft = () => (
+  <WorkHistory
+    title="React Developer"
+    location="StorageCraft Technologies"
+    time="Jan 2020 - Aug 2021"
+    duties={[
+      "Designed and implemented UI software for SaaS Cloud Bacakup Services (Onedrive, GCP, etc). Dealt with managing and browsing upwards of 100,000 items at a time",
+      "Lead Frontend Developer on green development project. Responsible for managing direction, tooling, design, and testing of the product",
+      "Fully remote position",
+    ]}
+    technologies={[
+      "React",
+      "React Hooks",
+      "Apollo Server/Client v2",
       "GraphQL",
       "Jest",
       "Rest",
-      "Material UI",
+      "Material UI v4",
     ]}
   />
 );
@@ -77,6 +102,7 @@ const generateJob = (header, component) => ({
 });
 
 export const workHistory = {
+  mep: generateJob("EvolveMEP", <EvolveMEP />),
   stc: generateJob("StorageCraft", <StorageCraft />),
   tect: generateJob("IntelliTect", <IntelliTect />),
   ewu: generateJob("Eastern WA University", <EasternWA />),
