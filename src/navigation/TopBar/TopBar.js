@@ -1,8 +1,8 @@
 import { useWindowDimensions, useWindowHasScrolled } from "hooks";
 import React from "react";
 import styled from "styled-components";
+import MenuButton from "../components/MenuButton";
 import Logo from "./Logo";
-import MenuButton from "./MenuButton";
 import NavMenu from "./NavMenu";
 
 const NavBar = () => {

@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { skillLegendPips, skillLegendText } from "./skillData";
+import { skillLevelPips, skillLevelText } from "./skillLevelData";
 
 const SkillList = ({ skills }) => {
   return (
@@ -10,8 +10,8 @@ const SkillList = ({ skills }) => {
           <HeaderWrapper>
             <Header>{skill.name}</Header>
             <SkillInfo>
-              <div>{skillLegendPips[skill.level]}</div>
-              <div>{skillLegendText[skill.level]}</div>
+              <div>{skillLevelPips[skill.level]}</div>
+              <div>{skillLevelText[skill.level]}</div>
             </SkillInfo>
           </HeaderWrapper>
           <SkillTypesList>

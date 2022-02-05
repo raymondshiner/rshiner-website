@@ -1,11 +1,11 @@
-import headshot from "assets/headshot.jpeg";
 import React from "react";
 import styled from "styled-components";
+import headshot from "./headshot.jpeg";
 
 const AboutMe = () => {
   return (
     <AboutMeWrapper>
-      <Picture />
+      <HeadshotPicture />
       <TextWrapper>
         <MainText>About Me</MainText>
         <Description>
@@ -54,7 +54,7 @@ const TextWrapper = styled.div`
   }
 `;
 
-const Picture = styled.img.attrs((props) => ({
+const HeadshotPicture = styled.img.attrs((props) => ({
   src: headshot,
 }))`
   flex: 0 1 45%;

@@ -1,15 +1,10 @@
-import infoIcon from "assets/infoIcon.svg";
-import { Modal } from "components";
-import React, { useState } from "react";
-import styled from "styled-components";
-
 const generateInfo = (name, pips, desc) => ({
   name,
   pips,
   desc,
 });
 
-const info = [
+export const skillLevels = [
   generateInfo(
     "Familiar",
     "•",
@@ -37,60 +32,18 @@ const info = [
   ),
 ];
 
-export const skillLegendPips = {
+export const skillLevelText = {
+  1: "Familiar",
+  2: "Novice",
+  3: "Proficient",
+  4: "Specialized",
+  5: "Expert",
+};
+
+export const skillLevelPips = {
   1: "•",
   2: "• •",
   3: "• • •",
   4: "• • • •",
   5: "• • • • •",
 };
-
-const SkillLevelInfo = () => {
-  const [showModal, setShowModal] = useState(false);
-  return (
-    <>
-      <InfoIcon onClick={() => setShowModal(true)} />
-      <Modal open={showModal} onClose={() => setShowModal(false)}>
-        <ListWrapper>
-          {info.map((skill) => (
-            <>
-              <TitleWrapper>
-                <h1>{skill.name}</h1>
-                <h5>{skill.pips}</h5>
-              </TitleWrapper>
-              <Description>{skill.desc}</Description>
-            </>
-          ))}
-        </ListWrapper>
-      </Modal>
-    </>
-  );
-};
-
-export default SkillLevelInfo;
-
-const InfoIcon = styled.img.attrs({
-  src: infoIcon,
-  alt: "skill info",
-})`
-  margin-right: 5px;
-  cursor: pointer;
-`;
-
-const TitleWrapper = styled.div`
-  display: Flex;
-  align-items: center;
-  justify-content: space-between;
-`;
-
-const ListWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
-
-const Description = styled.p`
-  max-width: 400px;
-  margin-top: 5px;
-  margin-bottom: 10px;
-  font-size: clamp(12px, 4vw, 15px);
-`;

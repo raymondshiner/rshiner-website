@@ -36,19 +36,3 @@ export const skills = [
   generateSkill("Docker", 1, "dev ops"),
   generateSkill("Kubernetes", 1, "dev ops"),
 ];
-
-export const skillLegendText = {
-  1: "Familiar",
-  2: "Novice",
-  3: "Proficient",
-  4: "Specialized",
-  5: "Expert",
-};
-
-export const skillLegendPips = {
-  1: "•",
-  2: "• •",
-  3: "• • •",
-  4: "• • • •",
-  5: "• • • • •",
-};

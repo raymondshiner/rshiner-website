@@ -1,8 +1,8 @@
-import { NavItem } from "components";
 import { useActiveNavItem } from "hooks";
 import { pages } from "pages";
 import React from "react";
 import styled from "styled-components";
+import NavItem from "../components/NavItem";
 
 const NavList = styled.ul`
   display: flex;
