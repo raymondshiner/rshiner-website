@@ -1,5 +1,4 @@
-import React from "react";
-import styled from "styled-components";
+import styled from "styled-components"
 
 const WorkHistory = ({ title, location, time, duties, technologies }) => {
   return (
@@ -11,7 +10,7 @@ const WorkHistory = ({ title, location, time, duties, technologies }) => {
       <SubTitle>{time}</SubTitle>
       <List>
         {duties.map((duty, index) => {
-          return <ListItem key={index}>{duty}</ListItem>;
+          return <ListItem key={index}>{duty}</ListItem>
         })}
       </List>
       <SubTitle>Technologies Used</SubTitle>
@@ -21,14 +20,38 @@ const WorkHistory = ({ title, location, time, duties, technologies }) => {
         ))}
       </TechnologiesList>
     </Wrapper>
-  );
-};
+  )
+}
+
+const GeodeIP = () => (
+  <WorkHistory
+    title="Founding Engineer / Senior React Engineer"
+    location={"GeodeIP"}
+    time="May 2021 - Current"
+    duties={[
+      "Founding engineer at a 7 person startup company for an Online SASS IP Managment tool.",
+      "Chief React Engineer responsible helping to architect, build, and maintain our core frontend project using Typescript React with Nx.Dev",
+      "Responsible for deciding, teaching, documenting, and enforcing clean code and unit testing standards for our team.",
+      "Fully Remote Position",
+    ]}
+    technologies={[
+      "TypeScript",
+      "React",
+      "React Hooks",
+      "Apollo Client v3",
+      "GraphQL",
+      "Cypress",
+      "Rest",
+      "NX.Dev",
+    ]}
+  />
+)
 
 const EvolveMEP = () => (
   <WorkHistory
     title="Senior React Engineer / Team Lead"
     location="EvolveMEP"
-    time="Sept 2021 - Current"
+    time="Sept 2021 - Mar 2021"
     duties={[
       "Working as a Team Leader on a green project managing 4+ developers as well as the functional JS React code base for our team, in addition to developing new features for our application.",
       "Responsible for defining, teaching, and enforcing clean code and testing standards across our code base to ensure product maintainability.",
@@ -46,7 +69,7 @@ const EvolveMEP = () => (
       "Material UI v5",
     ]}
   />
-);
+)
 
 const StorageCraft = () => (
   <WorkHistory
@@ -68,7 +91,7 @@ const StorageCraft = () => (
       "Material UI v4",
     ]}
   />
-);
+)
 
 const IntelliTect = () => (
   <WorkHistory
@@ -80,7 +103,7 @@ const IntelliTect = () => (
     ]}
     technologies={["C#", "Technical Writing", "Test Driven Development"]}
   />
-);
+)
 
 const EasternWA = () => (
   <WorkHistory
@@ -94,58 +117,59 @@ const EasternWA = () => (
     ]}
     technologies={["Teaching", "Communication", "Unit Testing"]}
   />
-);
+)
 
 const generateJob = (header, component) => ({
   header,
   component,
-});
+})
 
 export const workHistory = {
+  geode: generateJob("Geode IP", <GeodeIP />),
   mep: generateJob("EvolveMEP", <EvolveMEP />),
   stc: generateJob("StorageCraft", <StorageCraft />),
   tect: generateJob("IntelliTect", <IntelliTect />),
   ewu: generateJob("Eastern WA University", <EasternWA />),
-};
+}
 
 const Wrapper = styled.div`
   margin: 0px 15px;
   max-width: 550px;
   width: 80vw;
-`;
+`
 
 const Location = styled.div`
   font-size: 18px;
   color: ${(props) => props.theme.secondaryText};
   display: inline;
-`;
+`
 
 const Header = styled.h1`
   margin-bottom: 10px;
-`;
+`
 
 const SubTitle = styled.h3`
   border-bottom: ${(props) => `1px solid ${props.theme.primary}`};
   width: fit-content;
   padding-bottom: 2px;
-`;
+`
 
 const List = styled.ul`
   margin-left: 25px;
   margin-top: 20px;
   margin-bottom: 20px;
   color: ${(props) => props.theme.secondaryText};
-`;
+`
 
 const ListItem = styled.li`
   margin: 15px 0px;
-`;
+`
 
 const TechnologiesList = styled.div`
   display: flex;
   flex-wrap: wrap;
   margin-top: 10px;
-`;
+`
 
 const Technology = styled.div`
   margin: 3px;
@@ -153,4 +177,4 @@ const Technology = styled.div`
   padding: 8px;
   border-radius: 15px;
   white-space: nowrap;
-`;
+`
