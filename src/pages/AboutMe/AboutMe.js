@@ -1,6 +1,6 @@
-import React from "react";
-import styled from "styled-components";
-import headshot from "./headshot.jpeg";
+import React from "react"
+import styled from "styled-components"
+import headshot from "./headshot.jpeg"
 
 const AboutMe = () => {
   return (
@@ -10,7 +10,9 @@ const AboutMe = () => {
         <MainText>About Me</MainText>
         <Description>
           I'm a Web Developer based in Spokane, WA. I specialize in Functional
-          React, Codebase Management, Unit Testing, and Technical Writing.
+          React, Software Architecture, Extreme Programming, Agile
+          Methodologies, Codebase Management, Coaching and Training, and Team
+          Communication.
         </Description>
         <Description>
           I'm a Christian, a husband, a father to two children, and a total
@@ -23,10 +25,10 @@ const AboutMe = () => {
         </Description>
       </TextWrapper>
     </AboutMeWrapper>
-  );
-};
+  )
+}
 
-export default AboutMe;
+export default AboutMe
 
 const AboutMeWrapper = styled.div`
   display: flex;
@@ -38,7 +40,7 @@ const AboutMeWrapper = styled.div`
   min-height: 700px;
   width: 100%;
   max-width: 1100px;
-`;
+`
 
 const TextWrapper = styled.div`
   flex: 1 1 55%;
@@ -52,7 +54,7 @@ const TextWrapper = styled.div`
     padding: 0px;
     margin-top: 20px;
   }
-`;
+`
 
 const HeadshotPicture = styled.img.attrs((props) => ({
   src: headshot,
@@ -61,7 +63,7 @@ const HeadshotPicture = styled.img.attrs((props) => ({
   width: 100%;
   height: auto;
   border-radius: 10px;
-`;
+`
 
 const Description = styled.p`
   font-weight: 300;
@@ -69,7 +71,7 @@ const Description = styled.p`
   font-size: clamp(0.8rem, 5vw, 1.3rem);
   color: ${(props) => props.theme.secondaryText};
   margin: 8px 0;
-`;
+`
 
 const MainText = styled.h1`
   font-size: clamp(2.3rem, 10vw, 3.5rem);
@@ -80,4 +82,4 @@ const MainText = styled.h1`
     margin-bottom: 30px;
     align-self: center;
   }
-`;
+`
