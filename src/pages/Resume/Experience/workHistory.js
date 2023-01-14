@@ -27,7 +27,7 @@ const GeodeIP = () => (
   <WorkHistory
     title="Founding Engineer / Senior React Engineer"
     location={"GeodeIP"}
-    time="May 2021 - Current"
+    time="May 2022 - Dec 2022"
     duties={[
       "Founding engineer at a 7 person startup company for an Online SASS IP Managment tool.",
       "Chief React Engineer responsible helping to architect, build, and maintain our core frontend project using Typescript React with Nx.Dev",
@@ -51,7 +51,7 @@ const EvolveMEP = () => (
   <WorkHistory
     title="Senior React Engineer / Team Lead"
     location="EvolveMEP"
-    time="Sept 2021 - Mar 2021"
+    time="Sept 2021 - Mar 2022"
     duties={[
       "Working as a Team Leader on a green project managing 4+ developers as well as the functional JS React code base for our team, in addition to developing new features for our application.",
       "Responsible for defining, teaching, and enforcing clean code and testing standards across our code base to ensure product maintainability.",

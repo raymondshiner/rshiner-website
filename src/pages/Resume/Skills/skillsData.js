@@ -2,14 +2,26 @@ const generateSkill = (name, level, ...types) => ({
   name,
   level,
   types,
-});
+})
 
 export const skills = [
-  generateSkill("React", 4, "frontend"),
-  generateSkill("React Hooks", 4, "frontend"),
+  generateSkill("React", 5, "frontend"),
+  generateSkill("React Hooks", 5, "frontend"),
   generateSkill("Communication", 5, "general"),
   generateSkill("Management", 4, "general"),
   generateSkill("Clean Code", 5, "frontend", "backend"),
+  generateSkill("Typescript", 4, "frontend", "backend"),
+  generateSkill("Software Architecture", 4, "frontend", "backend"),
+  generateSkill(
+    "Extreme Programming (XP)",
+    4,
+    "frontend",
+    "backend",
+    "general"
+  ),
+  generateSkill("Test Driven Development", 5, "frontend", "backend", "dev ops"),
+  generateSkill("Unit Testing", 5, "frontend", "backend"),
+  generateSkill("Design Patterns", 4, "frontend", "backend"),
   generateSkill("JavaScript", 3, "frontend", "backend"),
   generateSkill("Jest", 5, "frontend"),
   generateSkill("Enzyme", 4, "frontend"),
@@ -28,7 +40,6 @@ export const skills = [
   generateSkill("Java", 2, "backend"),
   generateSkill("Java Spring", 2, "backend"),
   generateSkill("SQL", 1, "backend"),
-  generateSkill("Test Driven Development", 5, "frontend", "backend", "dev ops"),
   generateSkill("MicroServices", 3, "dev ops"),
   generateSkill("REST APIs", 4, "frontend", "backend"),
   generateSkill("Git", 3, "dev ops"),
@@ -38,4 +49,4 @@ export const skills = [
   generateSkill("CI/CD", 2, "dev ops"),
   generateSkill("Docker", 1, "dev ops"),
   generateSkill("Kubernetes", 1, "dev ops"),
-];
+]
