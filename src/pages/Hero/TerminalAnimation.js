@@ -1,8 +1,8 @@
-import { faTerminal } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
-import Typed from "react-typed";
-import styled from "styled-components";
+import { faTerminal } from "@fortawesome/free-solid-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import React from "react"
+import Typed from "react-typed"
+import styled from "styled-components"
 
 const TerminalAnimation = () => (
   <TerminalBox>
@@ -10,11 +10,13 @@ const TerminalAnimation = () => (
     <VerticalDivider />
     <TypeWriter
       strings={[
-        "React Developer",
+        "React Engineer",
+        "Software Architect",
         "Team Lead",
-        "Clean Code Specialist",
+        "Extreme Programer",
+        "Communication Specialist",
+        "Agile Manager",
         "Unit Tester",
-        "Technical Writer",
       ]}
       typeSpeed={70}
       backSpeed={30}
@@ -23,7 +25,7 @@ const TerminalAnimation = () => (
       loop
     />
   </TerminalBox>
-);
+)
 
 const TerminalBox = styled.div`
   margin: 25px;
@@ -41,7 +43,7 @@ const TerminalBox = styled.div`
   border-radius: 20px;
   overflow: hidden;
   transition: all ease 0.5s;
-`;
+`
 
 const TerminalIcon = styled(FontAwesomeIcon).attrs({
   icon: faTerminal,
@@ -49,7 +51,7 @@ const TerminalIcon = styled(FontAwesomeIcon).attrs({
   font-size: clamp(3rem, 10vw, 5rem);
   color: ${(props) => props.theme.primary};
   transition: all ease 0.5s;
-`;
+`
 
 const VerticalDivider = styled.div`
   height: clamp(50px, 100%, 150px);
@@ -66,12 +68,12 @@ const VerticalDivider = styled.div`
   }
 
   transition: all ease 0.5s;
-`;
+`
 
 const TypeWriter = styled(Typed)`
-  font-size: clamp(1rem, 7vw, 4rem);
+  font-size: clamp(1rem, 7vw, 3.6rem);
   letter-spacing: 3px;
   transition: all ease 0.5s;
-`;
+`
 
-export default TerminalAnimation;
+export default TerminalAnimation
