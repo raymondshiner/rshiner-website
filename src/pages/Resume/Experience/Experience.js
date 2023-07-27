@@ -6,7 +6,7 @@ import MobileTabs from "./MobileTabs"
 import { workHistory } from "./workHistory"
 
 const Experience = () => {
-  const [activeJob, setActiveJob] = useState("geode")
+  const [activeJob, setActiveJob] = useState("dmg")
   const { width } = useWindowDimensions()
 
   const onJobSelected = (job) => {
