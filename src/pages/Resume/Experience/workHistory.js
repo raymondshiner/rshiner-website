@@ -23,6 +23,30 @@ const WorkHistory = ({ title, location, time, duties, technologies }) => {
   )
 }
 
+const DivisionsMaintenanceGroup = () => (
+    <WorkHistory
+      title="Senior Frontend Engineer"
+      location={"Divisions Maintenance Group"}
+      time="May 2023 - Current"
+      duties={[
+        "Frontend Engineer responsible for delivering high quality UI features for our SASS B2B marketplace application using Typescript React ",
+        "Specific focus on excellent User Experience and highly responsive interfaces",
+        "Main developer on an inherited React TS project, responsible for continually improving the projects code quality and maintainability",
+        "Fully Remote Position",
+      ]}
+      technologies={[
+        "TypeScript",
+        "React",
+        "React Hooks",
+        "React Query",
+        "GraphQL",
+        "Rest",
+        "Material UI v5",
+      ]}
+    />
+  )
+
+
 const GeodeIP = () => (
   <WorkHistory
     title="Founding Engineer / Senior React Engineer"
@@ -125,11 +149,12 @@ const generateJob = (header, component) => ({
 })
 
 export const workHistory = {
+  dmg: generateJob("DMG", <DivisionsMaintenanceGroup />),
   geode: generateJob("Geode IP", <GeodeIP />),
   mep: generateJob("EvolveMEP", <EvolveMEP />),
   stc: generateJob("StorageCraft", <StorageCraft />),
   tect: generateJob("IntelliTect", <IntelliTect />),
-  ewu: generateJob("Eastern WA University", <EasternWA />),
+  ewu: generateJob("East WA University", <EasternWA />),
 }
 
 const Wrapper = styled.div`
