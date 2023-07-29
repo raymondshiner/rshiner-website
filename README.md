@@ -1,6 +1,6 @@
 # Raymond Shiner's Personal Website
 
-This is the source code for my [personal website](https://www.raymondshiner.com).
+This is the source code for the first version of my [personal website](https://www.raymondshiner.com).
 
 ## Technologies Used
 
@@ -13,3 +13,6 @@ This is the source code for my [personal website](https://www.raymondshiner.com)
 - [React Particles](https://www.npmjs.com/package/react-particles-js)
 - [yarn](https://yarnpkg.com/)
 
+## See the First Version live
+
+The final version of this project is still live and can be accessed at www.raymondshiner.com
