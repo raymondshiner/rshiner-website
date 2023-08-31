@@ -19,13 +19,11 @@ const projects = [
         src: PersonalBlogPic,
         technologies: ["React TS", "CSS", "Styled Components"],
         projectURL: "https://rshiner-blog.web.app/",
-        githubURL: "https://github.com/raymondshiner/rshiner-website",
+        githubURL: "https://github.com/raymondshiner/rshiner-blog",
     },
 ];
 
 const Projects = () => {
-    console.log({ projects });
-
     return (
         <ProjectsWrapper>
             <Title>My Projects</Title>

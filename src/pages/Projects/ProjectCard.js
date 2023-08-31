@@ -18,7 +18,7 @@ export const ProjectCard = ({
             <SpaceBetweenFlexbox>
                 <TitleLink url={projectURL}>{title}</TitleLink>
                 <ExternalLink url={githubURL}>
-                    <GithubLogo />
+                    <GithubLogo style={{ height: 32, width: 32 }} />
                 </ExternalLink>
             </SpaceBetweenFlexbox>
             <Summary>{`• ${summary}`}</Summary>
