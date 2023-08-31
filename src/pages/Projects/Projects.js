@@ -19,7 +19,7 @@ const projects = [
         src: PersonalBlogPic,
         technologies: ["React TS", "CSS", "Styled Components"],
         projectURL: "https://rshiner-blog.web.app/",
-        githubURL: "https://github.com/raymondshiner/rshiner-website",
+        githubURL: "https://github.com/raymondshiner/rshiner-blog",
     },
 ];
 
