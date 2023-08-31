@@ -24,8 +24,6 @@ const projects = [
 ];
 
 const Projects = () => {
-    console.log({ projects });
-
     return (
         <ProjectsWrapper>
             <Title>My Projects</Title>
